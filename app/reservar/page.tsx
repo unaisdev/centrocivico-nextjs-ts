@@ -16,7 +16,6 @@ export default function Reservar() {
       <Head />
       <Header />
       <Carousel />
-      <Reserva />
       <Redes />
       <Footer />
     </>

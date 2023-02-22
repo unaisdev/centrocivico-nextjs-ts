@@ -1,12 +1,8 @@
-#logo {
-    position: relative;
-    margin-bottom: -15%;
-    width: 45%;
-    z-index: 100;
-}
 
-#navigation{
 
+.text-xxs{
+    font-size: 0.65rem/* 12px */;
+    line-height: 1rem/* 16px */;
 }
 
 nav {
@@ -21,11 +17,6 @@ ul {
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
-}
-
-li {
-    padding-left: 20px;
-    padding-right: 20px;
 }
 
 .link-header {

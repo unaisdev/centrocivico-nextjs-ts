@@ -6,6 +6,7 @@ import Header from "@/components/Header"
 import Carousel from "@/components/Carousel"
 import Footer from '@/components/Footer'
 import Redes from '@/components/Redes'
+import Reserva from '@/components/Reserva'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,7 @@ export default function Home() {
       <Header />
 
       <Carousel />
-      <main className={styles.main}>Página principal</main>
+      <Reserva />
       <Redes />
       <Footer />
     </>

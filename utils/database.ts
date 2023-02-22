@@ -4,11 +4,11 @@ let conn: any
 
 if(!conn){
     conn = new Pool({
-        user: "postgres",
-        password: "admin",
-        host: "localhost",
+        user: "rqnublah",
+        password: "T8Pbf40me9gWCiiTrsIY9Kmf2P9vlZON",
+        host: "trumpet.db.elephantsql.com",
         port: 5432,
-        database: "centrocivico"
+        database: "rqnublah"
     }) 
 }
 

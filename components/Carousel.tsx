@@ -11,13 +11,13 @@ const Carousel = () => {
           <div className="row">
             <div className="col-sm-12">
               <h2>
-                <strong>¡Conoce nuestra casa!</strong>
+                <strong className="text-md">¡Conoce nuestra casa!</strong>
               </h2>
             </div>
           </div>
           <div className="row">
             <div className="col-sm-12">
-              <p>
+              <p  className="text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 accumsan pretium dolor vel convallis. Aliquam erat volutpat.
                 Maecenas lacus nunc, imperdiet sed mi et, finibus suscipit mi.
