@@ -28,4 +28,4 @@ const moduleExports = {
   },
 };
 
-module.exports = moduleExports;
+module.exports = nextConfig;
