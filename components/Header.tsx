@@ -7,7 +7,7 @@ import Link from "next/link";
 const Header = ({ }) => {
   return (
     <header className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
-      <nav className="flex justify-center items-center lg:grid grid-rows-1 grid-cols-2 md:grid-cols-3 ">
+      <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className="hidden lg:flex justify-center items-center ">
           <li>
             <Link className="link-header pl-6 pr-6" href="/">
@@ -25,15 +25,14 @@ const Header = ({ }) => {
             </Link>
           </li>
         </ul>
-        <a title="" className="flex justify-center pt-7 lg:pt-2">
+        <a title="" className="flex justify-center lg:pt-2">
           <Image
-            style={{ width: "45%"}}
-            className="relative -mb-32 w-2/4 l z-20 "
+            className="relative -mb-16 w-2/4 z-20 "
             src={Logo}
             alt="Bar Restaurante Centro Cívico de Allo"
           />
         </a>
-        <ul className="absolute top-0 left-0 lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">
+        <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">
           <li className="flex items-center justify-end">
             <div className="flex flex-wrap flex-col-reverse items-start lg:items-end justify-center">
               <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end">
@@ -73,7 +72,7 @@ const Header = ({ }) => {
                 </svg>
               </div>
               <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end">
-                <p>P.º de la Fuente, 31262 Allo, Navarra</p>
+                <p style={{ whiteSpace: "nowrap"}}>P.º de la Fuente, 31262 Allo, Navarra</p>
                 <svg
                   className="h-3 w-3 mx-0.5 lg:h-5 lg:w-5 lg:mx-2"
                   fill="none"
@@ -93,7 +92,7 @@ const Header = ({ }) => {
             </div>
           </li>
         </ul>
-        <div className="absolute right-3 top-3 mr-4 lg:hidden">
+        <div className="absolute top-1 right-1 lg:hidden">
           <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
           </button>
