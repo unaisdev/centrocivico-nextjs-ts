@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header = ({ }) => {
   return (
-    <header className="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <header className="bg-white px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200">
       <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className="hidden lg:flex justify-center items-center ">
           <li>
