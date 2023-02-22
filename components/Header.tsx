@@ -27,6 +27,7 @@ const Header = ({ }) => {
         </ul>
         <a title="" className="flex justify-center pt-7 lg:pt-2">
           <Image
+            style={{ width: "45%"}}
             className="relative -mb-32 w-2/4 l z-20 "
             src={Logo}
             alt="Bar Restaurante Centro Cívico de Allo"
