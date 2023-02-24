@@ -1,4 +1,7 @@
-
+.img-onscroll {
+    width: 40%;
+    transition:width 0.3s ease-in-out 0s;
+}
 
 .text-xxs{
     font-size: 0.65rem;
