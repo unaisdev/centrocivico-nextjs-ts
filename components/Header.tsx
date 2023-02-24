@@ -1,10 +1,33 @@
+"use client"
+
 import "./header.css";
 
 import Logo from "@/public/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Header = ({ }) => {
+  const [scrollTop, setScrollTop] = useState(0);
+  const [scale, setScale] = useState(1);
+  const [positionY, setPositionY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const newScale = 1 - scrollY / 1000;
+      const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
+      setPositionY(newPositionY);
+      setScale(newScale);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header className="sticky bg-white px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200">
       <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
@@ -27,9 +50,12 @@ const Header = ({ }) => {
         </ul>
         <a title="" className="flex justify-center lg:pt-2">
           <Image
-            className=" transition-all relative -mb-52 w-2/4 z-20 "
+            className="transition-all relative -mb-52 w-2/4 z-20 "
             src={Logo}
             alt="Bar Restaurante Centro Cívico de Allo"
+            style={{  
+              transform: `scale(${scale}) translateY(${positionY}px)`,
+              transition: `transform 0.3s ease-in-out`}}
           />
         </a>
         <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">
@@ -72,7 +98,7 @@ const Header = ({ }) => {
                 </svg>
               </div>
               <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-sm mg:text-md">
-                <p style={{ whiteSpace: "nowrap"}}>P.º de la Fuente, 31262 Allo, Navarra</p>
+                <p style={{ whiteSpace: "nowrap" }}>P.º de la Fuente, 31262 Allo, Navarra</p>
                 <svg
                   className="h-3 w-3 mx-0.5 lg:h-5 lg:w-5 lg:mx-2"
                   fill="none"

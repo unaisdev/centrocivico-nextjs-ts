@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
-    "@types/pg": "^8.6.6"
+    "@types/pg": "^8.6.6",
+    "@types/react-datepicker": "^4.8.0"
   }
 }

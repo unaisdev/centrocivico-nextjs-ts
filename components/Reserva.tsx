@@ -3,11 +3,17 @@ import { Reserva } from "../interfaces/Reserva"
 import "./global.css"
 import bg from '../public/images/brick.jpg'
 
+
 interface Props {
     reserva: Reserva
 }
 
 const Reserva = () => {
+    // const [hours, setHours] = useState(Number);
+    // const [minutes, setMinutes] = useState(Number);
+    // const [startDate, setStartDate] = useState(
+    //     setHours(setMinutes(new Date(), 30), 16)
+    // );
 
     return (
         <>
@@ -39,6 +45,19 @@ const Reserva = () => {
 
                                 <input className="w-full md:col-start-2 col-span-1 md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                     name="dia" type="date" placeholder="" required />
+                                {/* <DatePicker
+                                    locale="es"
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    showTimeSelect
+                                    excludeTimes={[
+                                        setHours(setMinutes(new Date(), 0), 17),
+                                        setHours(setMinutes(new Date(), 30), 18),
+                                        setHours(setMinutes(new Date(), 30), 19),
+                                        setHours(setMinutes(new Date(), 30), 17),
+                                    ]}
+                                    dateFormat="MMMM d, yyyy h:mm aa"
+                                /> */}
                                 <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                                     name="hora" type="time" list="times" step="3600000" placeholder="Hora:" required />
                             </div>
