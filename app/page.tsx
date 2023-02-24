@@ -18,6 +18,9 @@ export default function Home() {
 
       <Carousel />
       <Reserva />
+      <Reserva />
+      <Reserva />
+      <Reserva />
       <Redes />
       <Footer />
     </>

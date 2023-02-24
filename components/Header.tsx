@@ -15,10 +15,23 @@ const Header = ({ }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      const newScale = 1 - scrollY / 1000;
-      const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
-      setPositionY(newPositionY);
-      setScale(newScale);
+      if (scrollY < 400) {
+        const newScale = 1 - scrollY / 1000;
+        const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
+
+        if (newPositionY > 20) {
+          setPositionY(20); // Establece la posición en 100 si la nueva posición es mayor que 100
+        } else {
+          setPositionY(newPositionY); // De lo contrario, establece la posición en la nueva posición calculada
+        }
+
+        if (newScale < 0.5) {
+          setScale(0.5); // Establece la escala en 0.5 si la nueva escala es menor que 0.5
+        } else {
+          setScale(newScale); // De lo contrario, establece la escala en la nueva escala calculada
+        }
+      }
+
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -50,12 +63,16 @@ const Header = ({ }) => {
         </ul>
         <a title="" className="flex justify-center lg:pt-2">
           <Image
-            className="transition-all relative -mb-52 w-2/4 z-20 "
+            className="md:max-w-sm relative -mb-52 z-20 "
+            id="logo"
             src={Logo}
             alt="Bar Restaurante Centro Cívico de Allo"
-            style={{  
+            style={{
+              width: "100%",
               transform: `scale(${scale}) translateY(${positionY}px)`,
-              transition: `transform 0.3s ease-in-out`}}
+              transition: `transform 0.3s ease-in-out`,
+              
+            }}
           />
         </a>
         <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">

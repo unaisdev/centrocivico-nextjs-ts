@@ -1,27 +1,36 @@
 .img-onscroll {
-    width: 40%;
-    transition:width 0.3s ease-in-out 0s;
+  width: 40%;
+  transition: width 0.3s ease-in-out 0s;
 }
 
-.text-xxs{
-    font-size: 0.65rem;
+#logo {
+  max-width: "225px";
+}
+
+@media screen and (min-width: 768px) {
+  #logo {
+    max-width: 350px;
+  }
+}
+
+.text-xxs {
+  font-size: 0.65rem;
 }
 
 nav {
-    height: auto;
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
+  height: auto;
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
 }
 
 ul {
-    height: inherit;
-    display: flex;
-    flex-flow: row nowrap;
-    list-style: none;
+  height: inherit;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
 }
 
 .link-header {
-    font-size: 25px;
-
+  font-size: 25px;
 }
