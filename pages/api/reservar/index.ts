@@ -21,6 +21,7 @@ export default async function handler(
       query = "SELECT * FROM public.reserva ORDER BY id ASC;";
       try {
         let getResponse = await conn.query(query);
+
         return res.status(200).json(getResponse.rows);
       } catch (error: any) {
         return res.status(400).json(error.message);

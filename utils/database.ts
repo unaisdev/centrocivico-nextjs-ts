@@ -4,12 +4,12 @@ let conn: any
 
 if(!conn){
     conn = new Pool({
-        user: "rqnublah",
-        password: "T8Pbf40me9gWCiiTrsIY9Kmf2P9vlZON",
-        host: "trumpet.db.elephantsql.com",
+        user: process.env.DATABASE_USERNAME,
+        password: process.env.DATABASE_PASSWORD,
+        host: process.env.DATABASE_HOST,
         port: 5432,
-        database: "rqnublah"
-    }) 
+        database: process.env.DATABASE_NAME,
+    })
 }
 
 export { conn } ;
