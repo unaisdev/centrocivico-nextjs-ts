@@ -10,6 +10,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
+  
   const { method, body } = req;
   console.log(method);
   console.log(body);
@@ -25,6 +26,7 @@ export default async function handler(
       const values = [nombre, personas, dia, hora, telefono, email]
 
       const response = await conn.query(query, values);
+      res.redirect('/confirmacion');
 
       return res.status(200).json(response.rows[0]);
 

@@ -15,6 +15,7 @@ const Header = ({ }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
+
       if (scrollY < 400) {
         const newScale = 1 - scrollY / 1000;
         const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
@@ -42,7 +43,7 @@ const Header = ({ }) => {
   }, []);
 
   return (
-    <header className="sticky bg-white px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200">
+    <header className= "sticky bg-white px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200" >
       <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className="hidden lg:flex justify-center items-center ">
           <li>
@@ -63,7 +64,7 @@ const Header = ({ }) => {
         </ul>
         <a title="" className="flex justify-center lg:pt-2">
           <Image
-            className="md:max-w-sm relative -mb-52 z-20 "
+            className="md:max-w-sm relative -mb-52 md:-mb-64 z-20 "
             id="logo"
             src={Logo}
             alt="Bar Restaurante Centro Cívico de Allo"
