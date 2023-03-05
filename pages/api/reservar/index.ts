@@ -4,7 +4,6 @@ import { PrismaClient, reserva } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<reserva[] | { message: string }>
@@ -12,7 +11,7 @@ export default async function handler(
   const { method, body, headers, query } = req;
   let querie = "";
 
-  console.log(query)
+  console.log(query);
   switch (method) {
     case "GET":
       let reservas;
