@@ -17,8 +17,8 @@ const inter = Inter({ subsets: ['latin'] })
 function DatosDeUsuario() {
   const router = useRouter();
 
-  const { nombre, personas, dia, hora, telefono, email} = router;
 
+  
   return (
     <div>
       {/* otros datos del usuario */}

@@ -1,29 +1,45 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { conn } from "../../../utils/database";
+import { PrismaClient, reserva } from "@prisma/client";
 
-type Data = {
-  message: string;
-};
+const prisma = new PrismaClient();
+
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<reserva[] | { message: string }>
 ) {
   const { method, body, headers, query } = req;
   let querie = "";
 
-  console.log(method);
-  console.log(body);
-
+  console.log(query)
   switch (method) {
     case "GET":
-      if (query.key !== undefined && query.key === "holaquetalestamos") {
-        querie = "SELECT * FROM public.reserva ORDER BY id ASC;";
-        try {
-          let getResponse = await conn.query(querie);
+      let reservas;
 
-          return res.status(200).json(getResponse.rows);
+      if (query.key !== undefined && query.key === "holaquetalestamos") {
+        try {
+          if (query.fecha !== undefined) {
+            const fecha = query.fecha.toString();
+            console.log(fecha + "GET Request");
+
+            reservas = await prisma.reserva.findMany({
+              where: {
+                dia: {
+                  endsWith: fecha,
+                },
+              },
+            });
+
+            console.log("get dia" + reservas);
+          } else {
+            reservas = await prisma.reserva.findMany();
+            console.log(reservas);
+          }
+
+          // let getResponse = await conn.query(querie, value);
+
+          return res.status(200).json(reservas);
         } catch (error: any) {
           return res.status(400).json(error.message);
         }
@@ -34,19 +50,30 @@ export default async function handler(
     case "POST":
       const { nombre, personas, dia, hora, telefono, email } = body;
 
-      querie =
-        "INSERT INTO public.reserva(nombre, personas, dia, hora, telefono, email) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;";
-      const values = [nombre, personas, dia, hora, telefono, email];
-
       try {
-        let postResponse = await conn.query(query, values);
+        const newReserva = await prisma.reserva.create({
+          data: body,
+        });
 
-        return res.status(200).json(postResponse.rows[0]);
+        console.log(newReserva);
+        return res.status(200).json({ message: `ok post ${body.nombre}` });
       } catch (error: any) {
         return res.status(400).json(error.message);
       }
 
     case "DELETE":
+      if (query.key !== undefined && query.key === "holaquetalestamos") {
+        if (query.id !== undefined) {
+          const id = parseInt(query.id.toString());
+
+          const deleteReserva = await prisma.reserva.delete({
+            where: {
+              id: id,
+            },
+          });
+        }
+      }
+
       return res.status(200).json({ message: "DELETE Reserva" });
 
     default:
