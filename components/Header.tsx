@@ -2,7 +2,7 @@
 
 import "./header.css";
 
-import Logo from "@/public/images/logo.png";
+import logo from "../public/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -66,7 +66,7 @@ const Header = ({ }) => {
           <Image
             className="md:max-w-sm relative -mb-52 md:-mb-64 z-20 "
             id="logo"
-            src={Logo}
+            src={logo}
             alt="Bar Restaurante Centro Cívico de Allo"
             style={{
               width: "100%",
