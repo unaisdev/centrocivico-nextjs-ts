@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import handler from '@/pages/api/reservar';
 import { Reserva } from '@/interfaces/Reserva';
 
 
