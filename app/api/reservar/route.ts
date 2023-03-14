@@ -134,7 +134,7 @@ export async function DELETE(request: Request) {
       });
       console.log("delete ID: " + deleteIdParam)
 
-      return new Response(`${deleteReserva.id}`);
+      return new Response(`${deleteReserva}`);
     }
   }
 }
