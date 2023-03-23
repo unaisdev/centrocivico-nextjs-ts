@@ -18,3 +18,8 @@ model reserva {
   mas_info String?
   personas Int
 }
+
+model user {
+  id       BigInt  @id @default(autoincrement())
+  token_push_notification   String
+}

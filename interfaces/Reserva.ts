@@ -5,5 +5,5 @@ export interface Reserva {
     dia: string;
     hora: string;
     email?: string;
-    masinfo?: string;
+    mas_info?: string;
 }

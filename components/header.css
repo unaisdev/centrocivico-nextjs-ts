@@ -1,15 +1,47 @@
-.img-onscroll {
-  width: 40%;
-  transition: width 0.3s ease-in-out 0s;
+
+header {
+  transform: translateY(0px);
+  transition: transform 0.8s ease-in-out;
+  background-color: Peru
+
+}
+
+.header_scrolled {
+  transform: translateY(-1px) scale(1);
+  opacity: 0.9;
+  background-color: Peru
 }
 
 #logo {
   max-width: "225px";
 }
 
-@media screen and (min-width: 768px) {
+.small-image {
+  transform: translateY(-100px) scale(0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.large-image {
+  transform: translateY(-70px) scale(0.7);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
   #logo {
     max-width: 350px;
+  }
+  header {
+    height: 100px;
+  }
+
+  .small-image {
+    transform: translateY(-70px) scale(0.6);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .large-image {
+    transform: translateY(-20px) scale(0.7);
+    transition: transform 0.3s ease-in-out;
   }
 }
 

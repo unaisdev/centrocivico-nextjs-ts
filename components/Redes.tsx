@@ -17,7 +17,7 @@ const Redes = () => {
                         </svg>
                     </a>
 
-                    <a href="https://www.facebook.com/dupgrade/" target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" title="Facebook">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-7 w-7"
@@ -28,7 +28,7 @@ const Redes = () => {
                         </svg>
                     </a>
 
-                    <a href="https://twitter.com/digital_upgrade?lang=en" target="_blank" rel="noopener noreferrer" title="Twitter">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" title="Twitter">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-7 w-7"

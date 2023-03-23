@@ -11,27 +11,33 @@ const Header = ({ }) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [scale, setScale] = useState(1);
   const [positionY, setPositionY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-
-      if (scrollY < 400) {
-        const newScale = 1 - scrollY / 1000;
-        const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
-
-        if (newPositionY > 20) {
-          setPositionY(20); // Establece la posición en 100 si la nueva posición es mayor que 100
-        } else {
-          setPositionY(newPositionY); // De lo contrario, establece la posición en la nueva posición calculada
-        }
-
-        if (newScale < 0.5) {
-          setScale(0.5); // Establece la escala en 0.5 si la nueva escala es menor que 0.5
-        } else {
-          setScale(newScale); // De lo contrario, establece la escala en la nueva escala calculada
-        }
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
+      // if (scrollY < 400) {
+      //   const newScale = 1 - scrollY / 1000;
+      //   const newPositionY = - scrollY / 4; // Ajusta el valor para cambiar la velocidad del desplazamiento
+
+      //   if (newPositionY > 20) {
+      //     setPositionY(20); // Establece la posición en 100 si la nueva posición es mayor que 100
+      //   } else {
+      //     setPositionY(newPositionY); // De lo contrario, establece la posición en la nueva posición calculada
+      //   }
+
+      //   if (newScale < 0.5) {
+      //     setScale(0.5); // Establece la escala en 0.5 si la nueva escala es menor que 0.5
+      //   } else {
+      //     setScale(newScale); // De lo contrario, establece la escala en la nueva escala calculada
+      //   }
+      // }
 
     };
 
@@ -42,17 +48,19 @@ const Header = ({ }) => {
     };
   }, []);
 
+
+
   return (
-    <header className= "sticky bg-white px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200" >
+    <header className= {`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ``}` } >
       <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className="hidden lg:flex justify-center items-center ">
           <li>
-            <Link className="link-header pl-6 pr-6" href="/">
+            <Link className="link-header pl-6 pr-6" href="" >
               Inicio
             </Link>
           </li>
           <li>
-            <Link className="link-header pl-6 pr-6" href="/carta">
+            <Link className="link-header pl-6 pr-6" href="" onClick={() => handleScrollToCarta()}>
               Carta
             </Link>
           </li>
@@ -64,16 +72,18 @@ const Header = ({ }) => {
         </ul>
         <a title="" className="flex justify-center lg:pt-2">
           <Image
-            className="md:max-w-sm relative -mb-52 md:-mb-64 z-20 "
+            className={`md:max-w-sm relative -mb-52 z-20  ${
+              scrolled ? "md:-mb-80 small-image" : "md:-mb-72 large-image"
+            }`}
             id="logo"
             src={logo}
             alt="Bar Restaurante Centro Cívico de Allo"
-            style={{
-              width: "100%",
-              transform: `scale(${scale}) translateY(${positionY}px)`,
-              transition: `transform 0.3s ease-in-out`,
+            // style={{
+            //   width: "100%",
+            //   transform: `scale(${scale}) translateY(${positionY}px)`,
+            //   transition: `transform 0.3s ease-in-out`,
               
-            }}
+            // }}
           />
         </a>
         <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">

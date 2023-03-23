@@ -3,6 +3,7 @@ import { Reserva } from "../interfaces/Reserva"
 import "./global.css"
 import bg from '../public/images/brick.jpg'
 import ContactForm from "./ContactForm"
+import ReservaForm from "./ReservaForm"
 
 
 interface Props {
@@ -40,7 +41,7 @@ const Reserva = () => {
                 className="flex w-full flex-wrap items-center justify-between">
 
                 <div className="container mx-auto my-4 px-4 lg:px-20">
-                    <ContactForm />
+                    <ReservaForm />
                 </div>
             </section>
         </>

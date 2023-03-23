@@ -15,6 +15,14 @@ function toJson(data: reserva[] | reserva) {
   , 4).replace(/"(-?\d+)n"/g, (_, a) => a);
 }
 
+//https://www.prisma.io/docs/concepts/components/prisma-client/advanced-type-safety/prisma-validator
+prisma.$use(async (params, next) => {
+  // Manipulate params here
+  const result = await next(params)
+  // See results here
+  return result
+})
+
 export async function GET(request: Request) {
   console.log("------------------GET-----------------");
   
@@ -58,23 +66,26 @@ export async function GET(request: Request) {
   }
 }
 
+
 export async function POST(request: Request) {
   console.log("------------------POST-----------------");
 
   const { body, json } = request;
-  // const data = await request.json()
 
   const response: reserva = await new Response(request.body).json();
   
-  // console.log(data);
+  console.log(response);
+  
   try {
       const newReserva = await prisma.reserva.create({
         data: response,
       });
-      console.log("Adding 'reserva':" + toJson(newReserva));
+      console.log("Adding 'reserva':" + toJson(response));
 
       return new Response(`${toJson(newReserva)}`);
     } catch (error: any) {
+      console.log(error.message);
+
       return new Response(error.message);
     }
 
