@@ -60,7 +60,7 @@ const Header = ({ }) => {
             </Link>
           </li>
           <li>
-            <Link className="link-header pl-6 pr-6" href="" onClick={() => handleScrollToCarta()}>
+            <Link className="link-header pl-6 pr-6" href="">
               Carta
             </Link>
           </li>
