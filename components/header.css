@@ -40,7 +40,7 @@ header {
   }
 
   .large-image {
-    transform: translateY(-90px) scale(0.4);
+    transform: translateY(-50px) scale(0.7);
     transition: transform 0.3s ease-in-out;
   }
 }
