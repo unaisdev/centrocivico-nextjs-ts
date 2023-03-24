@@ -41,7 +41,7 @@ const Reserva = () => {
                 className="flex w-full flex-wrap items-center justify-between">
 
                 <div className="container mx-auto my-4 px-4 lg:px-20">
-                    <ReservaForm />
+                    <ContactForm />
                 </div>
             </section>
         </>

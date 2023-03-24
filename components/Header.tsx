@@ -7,7 +7,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const Header = ({ }) => {
+type Props = {
+  scrollTo: () => void;
+}
+
+const Header = ({ scrollTo }: Props) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [scale, setScale] = useState(1);
   const [positionY, setPositionY] = useState(0);
@@ -60,7 +64,7 @@ const Header = ({ }) => {
             </Link>
           </li>
           <li>
-            <Link className="link-header pl-6 pr-6" href="">
+            <Link className="link-header pl-6 pr-6" onClick={scrollTo} href="">
               Carta
             </Link>
           </li>

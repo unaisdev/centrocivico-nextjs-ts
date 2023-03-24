@@ -75,7 +75,7 @@ function ContactForm() {
     <form onSubmit={handleSubmit} method="POST">
       {isSubmitting ? (
         <>
-          <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border-slate">
+          <div className="w-8/12 p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border-slate">
             <div className="flex">
               <h1 className="font-bold uppercase text-5xl">Enviando solicitud de reserva...</h1>
             </div>
@@ -83,7 +83,7 @@ function ContactForm() {
           </div>
 
           <div
-            className="w-full lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto shadow-2xl bg-yellow-500 rounded-2xl">
+            className="w-4/12 lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto shadow-2xl bg-yellow-500 rounded-2xl">
             <div className="flex flex-col text-white">
               <h1 className="font-bold text-neutral-900 uppercase text-4xl my-4">Encantados de atenderte</h1>
               <p className="text-neutral-100">Nuestra principal especialidad es cocinar, pero la segunda es tratar a los clientes como si estuviesen en casa. <br />
