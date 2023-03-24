@@ -7,7 +7,7 @@ const Carousel = () => {
       <span id="item-2"></span>
       <span id="item-3"></span>
       <div className="carousel-item-div item-1">
-        <div className="carousel-item-header-background p-3 absolute bottom-0 right-0">
+        <div className="carousel-item-header-background p-3">
           <div className="row">
             <div className="col-sm-12">
               <h2>

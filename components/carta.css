@@ -1257,11 +1257,6 @@ textarea.form-control {
 }
 
 @media (max-width: 767px) {
-  .menu-title,
-  .menu-detail,
-  .menu-price-detail {
-    text-align: center;
-  }
 
   .menu-label {
     float: none;

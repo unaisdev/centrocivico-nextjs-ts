@@ -5,7 +5,7 @@ import './carta.css'
 const Carta = () => {
 
     return (
-        <section id="carta" className="module">
+        <section id="carta" className="module px-4">
             <div className="flex flex-col">
                 <div className="flex justify-center">
                     <div className="module-header wow fadeInUp animated">
@@ -16,7 +16,7 @@ const Carta = () => {
 
                 <div className="flex flex-col w-full md:grid md:grid-cols-2 items-top md:flex-row md:justify-around">
 
-                    <div className="p-4  w-full sm:px-16 md:px-42 md:col-span-1 ">
+                    <div className="px-4  w-full sm:px-16 md:px-42 md:col-span-1 ">
 
                         <div className="menu">
                             <div className="grid grid-cols-3 items-center">
@@ -110,7 +110,7 @@ const Carta = () => {
 
                     </div>
 
-                    <div className="p-4 w-full sm:px-16 md:px-42 md:col-span-1 ">
+                    <div className="px-4 w-full sm:px-16 md:px-42 md:col-span-1 ">
 
                         <div className="menu">
                             <div className="grid grid-cols-3 items-center">
@@ -234,7 +234,7 @@ const Carta = () => {
 
                         <div className="menu">
                             <div className="grid grid-cols-3 items-center">
-                                <div className="col-span-2">
+                                <div className="col-span-1">
                                     <h4 className="menu-title">Bocadillo de confit desmechado</h4>
                                     <div className="menu-detail"></div>
                                 </div>
@@ -261,6 +261,7 @@ const Carta = () => {
 
 
                     </div>
+
 
                     <div className="p-4 w-full sm:px-16 md:px-42 md:col-span-1 ">
                         <div className="flex justify-center">
