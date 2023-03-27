@@ -5,17 +5,19 @@ import "./header.css";
 import logo from "../public/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 
 type Props = {
   scrollTo: () => void;
+  onMobileMenuOpen: () => void
 }
 
-const Header = ({ scrollTo }: Props) => {
+const Header = ({ scrollTo, onMobileMenuOpen }: Props) => {
   const [scrollTop, setScrollTop] = useState(0);
   const [scale, setScale] = useState(1);
   const [positionY, setPositionY] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,10 @@ const Header = ({ scrollTo }: Props) => {
     };
   }, []);
 
-
+  const onMobileMenuOpenHeader = () => {
+    menuOpen ? setMenuOpen(false): setMenuOpen(true);
+    onMobileMenuOpen()
+  }
 
   return (
     <header className= {`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ``}` } >
@@ -60,7 +65,7 @@ const Header = ({ scrollTo }: Props) => {
         <a title="" className="flex justify-center lg:pt-2">
           <Image
             className={`md:max-w-sm relative -mb-52 z-20  ${
-              scrolled ? "md:-mb-80 small-image" : "md:-mb-72 large-image"
+              scrolled || menuOpen ? "md:-mb-80 small-image" : "md:-mb-72 large-image"
             }`}
             id="logo"
             src={logo}
@@ -134,7 +139,7 @@ const Header = ({ scrollTo }: Props) => {
           </li>
         </ul>
         <div className="absolute top-1 right-1 lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <button onClick={onMobileMenuOpenHeader} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
           </button>
         </div>
