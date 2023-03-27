@@ -12,10 +12,12 @@ import ContactForm from '@/components/ContactForm'
 import { useRef, useState } from 'react'
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const cartaRef = useRef<HTMLDivElement | null>(null);
+  const reservarRef = useRef<HTMLDivElement | null>(null);
 
   const handleScrollToCarta = () => {
+    console.log("scrolling");
+
     const offsetTop = cartaRef?.current?.offsetTop ?? 0
 
     window.scrollTo({
@@ -24,32 +26,31 @@ export default function Home() {
     });
   };
 
-  const openMobileMenu = () => {
-    menuOpen ? setMenuOpen(false) : setMenuOpen(true)
-  }
+  const handleScrollToReservar = () => {
+    console.log("scrolling");
+
+    const offsetTop = reservarRef?.current?.offsetTop ?? 0
+
+    window.scrollTo({
+      top: offsetTop - 150,
+      behavior: 'smooth',
+    });
+  };
+
 
   return (
     <>
-      <Header scrollTo={handleScrollToCarta} onMobileMenuOpen={openMobileMenu} />
-      {menuOpen ? (
-        <div id='menu-mobile' className='absolute overflow-hidden w-full h-2/4 z-10 bg-white flex items-center justify-center'>
-          <nav className='flex flex-col items-center justify-center pt-10'>
-            <div className='py-4'>CARTA</div>
-            <div className='py-4'>RESERVAS</div>
-            <div className='py-4'>CONTACTO</div>
-          </nav>
-        </div>
-      ) : (<>
-        <Carousel />
-        <div ref={cartaRef}>
-          <Carta />
-        </div>
+      <Header scrollTo={{handleScrollToCarta, handleScrollToReservar}} />
+      <Carousel />
+      <div ref={cartaRef}>
+        <Carta />
+      </div>
+      <div ref={reservarRef}>
         <Reserva />
-        <Redes />
-        <Footer />
-      </>
-      )}
 
+      </div>
+      <Redes />
+      <Footer />
     </>
   )
 }

@@ -7,8 +7,7 @@ header {
 }
 
 .header_scrolled {
-  transform: translateY(-1px) scale(1);
-  opacity: 0.9;
+  transform: translateY(-30px) scale(1);
   background-color: Peru
 }
 
@@ -18,6 +17,12 @@ header {
 
 .small-image {
   transform: translateY(-100px) scale(0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.medium-image {
+  transform: translateY(-70px) scale(0.6);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -35,7 +40,7 @@ header {
   }
 
   .small-image {
-    transform: translateY(-120px) scale(0.3);
+    transform: translateY(-80px) scale(0.3);
     transition: transform 0.3s ease-in-out;
   }
 

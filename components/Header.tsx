@@ -8,14 +8,13 @@ import Link from "next/link";
 import { MouseEventHandler, useEffect, useState } from "react";
 
 type Props = {
-  scrollTo: () => void;
-  onMobileMenuOpen: () => void
+  scrollTo: {
+    handleScrollToCarta: () => void,
+    handleScrollToReservar: () => void,
+  };
 }
 
-const Header = ({ scrollTo, onMobileMenuOpen }: Props) => {
-  const [scrollTop, setScrollTop] = useState(0);
-  const [scale, setScale] = useState(1);
-  const [positionY, setPositionY] = useState(0);
+const Header = ({ scrollTo }: Props) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -38,13 +37,22 @@ const Header = ({ scrollTo, onMobileMenuOpen }: Props) => {
   }, []);
 
   const onMobileMenuOpenHeader = () => {
-    menuOpen ? setMenuOpen(false): setMenuOpen(true);
-    onMobileMenuOpen()
+    menuOpen ? setMenuOpen(false) : setMenuOpen(true);
+  }
+
+  const onCartaMobileMenuClick = () => {
+    setMenuOpen(false)
+    scrollTo.handleScrollToCarta()
+  }
+
+  const onReservarMobileMenuClick = () => {
+    setMenuOpen(false)
+    scrollTo.handleScrollToReservar()
   }
 
   return (
-    <header className= {`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ``}` } >
-      <nav className="flex justify-center items-center flex-row grid-cols-3 lg:grid grid-rows-1 lg:grid-cols-3 ">
+    <header className={`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ``}`} >
+      <nav className="flex justify-center items-center flex-row lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className="hidden lg:flex justify-center items-center ">
           <li>
             <Link className="link-header pl-6 pr-6" href="" >
@@ -52,32 +60,28 @@ const Header = ({ scrollTo, onMobileMenuOpen }: Props) => {
             </Link>
           </li>
           <li>
-            <Link className="link-header pl-6 pr-6" onClick={scrollTo} href="">
+            <Link className="link-header pl-6 pr-6" onClick={scrollTo.handleScrollToCarta} href="">
               Carta
             </Link>
           </li>
           <li>
-            <Link className="link-header pl-6 pr-6" href="/reservar">
+            <Link className="link-header pl-6 pr-6" onClick={scrollTo.handleScrollToReservar} href="">
               Reserva
             </Link>
           </li>
         </ul>
-        <a title="" className="flex justify-center lg:pt-2">
-          <Image
-            className={`md:max-w-sm relative -mb-52 z-20  ${
-              scrolled || menuOpen ? "md:-mb-80 small-image" : "md:-mb-72 large-image"
-            }`}
-            id="logo"
-            src={logo}
-            alt="Bar Restaurante Centro Cívico de Allo"
-            // style={{
-            //   width: "100%",
-            //   transform: `scale(${scale}) translateY(${positionY}px)`,
-            //   transition: `transform 0.3s ease-in-out`,
-              
-            // }}
-          />
-        </a>
+        <Image
+          className={`md:max-w-sm relative -mb-72 z-20  ${scrolled ? "small-image" : menuOpen ? "medium-image" : " large-image"}`}
+          id="logo"
+          src={logo}
+          alt="Bar Restaurante Centro Cívico de Allo"
+        // style={{
+        //   width: "100%",
+        //   transform: `scale(${scale}) translateY(${positionY}px)`,
+        //   transition: `transform 0.3s ease-in-out`,
+
+        // }}
+        />
         <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">
           <li className="flex items-center justify-end">
             <div className="flex flex-wrap flex-col-reverse items-start lg:items-end justify-center">
@@ -138,13 +142,24 @@ const Header = ({ scrollTo, onMobileMenuOpen }: Props) => {
             </div>
           </li>
         </ul>
-        <div className="absolute top-1 right-1 lg:hidden">
+        <div className="absolute bottom-1 right-1 lg:hidden">
           <button onClick={onMobileMenuOpenHeader} className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
             <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
           </button>
         </div>
+
       </nav>
-      
+      {menuOpen ? (
+        <div id='menu-mobile' className={`overflow-hidden w-full z-10 bg-white 
+          ${scrolled ? "pt-24" : menuOpen ? "pt-40" : " pt-40"}
+          flex items-center justify-center shadow-xl`}>
+          <nav className='flex flex-col items-center justify-center'>
+            <a onClick={onCartaMobileMenuClick} className='py-4'>CARTA</a>
+            <a onClick={onReservarMobileMenuClick} className='py-4'>RESERVAS</a>
+            <a className='py-4'>CONTACTO</a>
+          </nav>
+        </div>
+      ) : null}
     </header>
   );
 };
