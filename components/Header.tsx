@@ -22,6 +22,8 @@ const Header = ({ scrollTo }: Props) => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
       const scrollPosition = window.scrollY;
+
+
       if (scrollPosition > 0) {
         setScrolled(true);
       } else {
@@ -149,17 +151,16 @@ const Header = ({ scrollTo }: Props) => {
         </div>
 
       </nav>
-      {menuOpen ? (
-        <div id='menu-mobile' className={`overflow-hidden w-full z-10 bg-white 
+
+      <div id='menu-mobile' className={`${menuOpen ? '' : 'hide opacity-0'} overflow-hidden w-full z-10 bg-white 
           ${scrolled ? "pt-24" : menuOpen ? "pt-40" : " pt-40"}
-          flex items-center justify-center shadow-xl`}>
-          <nav className='flex flex-col items-center justify-center'>
-            <a onClick={onCartaMobileMenuClick} className='py-4'>CARTA</a>
-            <a onClick={onReservarMobileMenuClick} className='py-4'>RESERVAS</a>
-            <a className='py-4'>CONTACTO</a>
-          </nav>
-        </div>
-      ) : null}
+          flex items-center justify-center shadow-xl menu-mobile`}>
+        <nav className='flex flex-col items-center justify-center'>
+          <a onClick={onCartaMobileMenuClick} className='py-4'>CARTA</a>
+          <a onClick={onReservarMobileMenuClick} className='py-4'>RESERVAS</a>
+          <a className='py-4'>CONTACTO</a>
+        </nav>
+      </div>
     </header>
   );
 };
