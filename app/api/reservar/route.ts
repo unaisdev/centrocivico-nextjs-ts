@@ -157,6 +157,7 @@ export async function POST(request: Request) {
     });
     console.log("Adding 'reserva':" + toJson(newReserva));
     
+    sendConfirmationEmail(newReserva);
 
 
     return new Response(`${toJson(newReserva)}`);
@@ -165,8 +166,7 @@ export async function POST(request: Request) {
 
     return new Response(error.message);
   }finally{
-    sendConfirmationEmail(newReserva);
-
+    
   }
 }
 
