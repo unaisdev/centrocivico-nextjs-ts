@@ -1,4 +1,3 @@
-import { OAuth2Client } from "google-auth-library";
 import nodemailer from "nodemailer";
 import smtpTransport from "nodemailer-smtp-transport";
 import dotenv from "dotenv";

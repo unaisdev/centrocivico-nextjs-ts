@@ -131,7 +131,9 @@ function ContactForm() {
               <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 name="nombre" type="text" placeholder="Nombre *" value={formValues.nombre} onChange={handleInputChange} required />
               <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                name="telefono" type="text" placeholder="Teléfono *" value={formValues.telefono} onChange={handleInputChange} required />
+                name="email" type="text" placeholder="email@gmail.com *" value={formValues.email} onChange={handleInputChange} required />
+                <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                name="telefono" type="text" placeholder="999999999 *" value={formValues.telefono} onChange={handleInputChange} />
               <input className="w-full col-span-1 md:col-span-1 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                 name="personas" type="number" placeholder="¿Cuántos? *" value={formValues.personas} onChange={handleInputChange} required />
             </div>
@@ -141,7 +143,7 @@ function ContactForm() {
                 name="dia" type="date" placeholder="" value={formValues.dia} onChange={handleInputChange} required />
 
               <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                name="hora" type="time" list="times" step="3600000" placeholder="Hora:" onChange={handleInputChange} required />
+                name="hora" type="time" list="times" placeholder="Hora:" onChange={handleInputChange} required />
             </div>
             <div className="my-4">
               <textarea value={formValues.mas_info} onChange={handleInputChange} name="mas_info" placeholder="¿Cualquier cosa a comentar sobre la reserva? Carrito de bebé, silla de ruedas..." className="w-full h-16 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
