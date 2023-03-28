@@ -13,32 +13,13 @@ type Props = {
     handleScrollToCarta: () => void,
     handleScrollToReservar: () => void,
   };
+  scrolled: boolean;
 }
 
-const Header = ({ scrollTo }: Props) => {
-  const [scrolled, setScrolled] = useState(false);
+const Header = ({ scrollTo, scrolled }: Props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || window.pageYOffset;
-      const scrollPosition = window.scrollY;
-
-
-      if (scrollPosition > 0) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
+ 
   const onMobileMenuOpenHeader = () => {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   }

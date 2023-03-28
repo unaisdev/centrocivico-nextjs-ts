@@ -9,12 +9,36 @@ import Header from '@/components/Header'
 import Redes from '@/components/Redes'
 import Reserva from '@/components/Reserva'
 import ContactForm from '@/components/ContactForm'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
   const cartaRef = useRef<HTMLDivElement | null>(null);
   const reservarRef = useRef<HTMLDivElement | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const scrollPosition = window.scrollY;
+
+      console.log(scrollPosition)
+
+      if (scrollPosition > 30) {
+        setScrolled(true);
+
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   const handleScrollToCarta = () => {
     console.log("scrolling");
@@ -52,21 +76,24 @@ export default function Home() {
 
   return (
     <>
-      <Header scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} />
-      <div ref={inicioRef}>
+      <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} />
+      <div className={`${scrolled ? 'page_scrolled' : 'page_normal'}`} >
+        <div ref={inicioRef}>
 
-        <Carousel />
+          <Carousel />
 
-      </div>
-      <div ref={cartaRef}>
-        <Carta />
-      </div>
-      <div ref={reservarRef}>
-        <Reserva />
+        </div>
+        <div ref={cartaRef}>
+          <Carta />
+        </div>
+        <div ref={reservarRef}>
+          <Reserva />
 
+        </div>
+        <Redes />
+        <Footer />
       </div>
-      <Redes />
-      <Footer />
+
     </>
   )
 }
