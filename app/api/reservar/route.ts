@@ -158,14 +158,15 @@ export async function POST(request: Request) {
     console.log("Adding 'reserva':" + toJson(newReserva));
     
 
-    sendConfirmationEmail(newReserva);
-
 
     return new Response(`${toJson(newReserva)}`);
   } catch (error: any) {
     console.log(error.message);
 
     return new Response(error.message);
+  }finally{
+    sendConfirmationEmail(newReserva);
+
   }
 }
 
