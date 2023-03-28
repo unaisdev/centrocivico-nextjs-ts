@@ -9,6 +9,7 @@ import { MouseEventHandler, useEffect, useState } from "react";
 
 type Props = {
   scrollTo: {
+    handleScrollToInicio: () => void,
     handleScrollToCarta: () => void,
     handleScrollToReservar: () => void,
   };
@@ -53,11 +54,11 @@ const Header = ({ scrollTo }: Props) => {
   }
 
   return (
-    <header className={`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ``}`} >
+    <header className={`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ` header_normal`}`} >
       <nav className="flex justify-center items-center flex-row lg:grid grid-rows-1 lg:grid-cols-3 ">
-        <ul id="navigation" className="hidden lg:flex justify-center items-center ">
+        <ul id="navigation" className={`hidden lg:flex justify-center items-center  ${scrolled ? 'scrolled': 'normal'}`}>
           <li>
-            <Link className="link-header pl-6 pr-6" href="" >
+            <Link className="link-header pl-6 pr-6" onClick={scrollTo.handleScrollToInicio} href="" >
               Inicio
             </Link>
           </li>
@@ -73,6 +74,7 @@ const Header = ({ scrollTo }: Props) => {
           </li>
         </ul>
         <Image
+          onClick={scrollTo.handleScrollToInicio}
           className={`md:max-w-sm relative -mb-72 z-20  ${scrolled ? "small-image" : menuOpen ? "medium-image" : " large-image"}`}
           id="logo"
           src={logo}
@@ -84,7 +86,7 @@ const Header = ({ scrollTo }: Props) => {
 
         // }}
         />
-        <ul className="hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm ">
+        <ul className={`hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm  ${scrolled ? 'scrolled': 'normal'}`}>
           <li className="flex items-center justify-end">
             <div className="flex flex-wrap flex-col-reverse items-start lg:items-end justify-center">
               <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-sm">
@@ -152,9 +154,9 @@ const Header = ({ scrollTo }: Props) => {
 
       </nav>
 
-      <div id='menu-mobile' className={`${menuOpen ? '' : 'hide opacity-0'} overflow-hidden w-full z-10 bg-white 
+      <div id='menu-mobile' className={`overflow-hidden w-full z-10 bg-white 
           ${scrolled ? "pt-24" : menuOpen ? "pt-40" : " pt-40"}
-          flex items-center justify-center shadow-xl menu-mobile`}>
+          flex items-center justify-center shadow-xl menu-mobile ${menuOpen ? 'flex' : 'hide hidden opacity-0'} `}>
         <nav className='flex flex-col items-center justify-center'>
           <a onClick={onCartaMobileMenuClick} className='py-4'>CARTA</a>
           <a onClick={onReservarMobileMenuClick} className='py-4'>RESERVAS</a>

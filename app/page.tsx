@@ -12,6 +12,7 @@ import ContactForm from '@/components/ContactForm'
 import { useRef, useState } from 'react'
 
 export default function Home() {
+  const inicioRef = useRef<HTMLDivElement | null>(null);
   const cartaRef = useRef<HTMLDivElement | null>(null);
   const reservarRef = useRef<HTMLDivElement | null>(null);
 
@@ -37,11 +38,26 @@ export default function Home() {
     });
   };
 
+  const handleScrollToInicio = () => {
+    console.log("scrolling");
+
+    const offsetTop = inicioRef?.current?.offsetTop ?? 0
+
+    window.scrollTo({
+      top: offsetTop - 150,
+      behavior: 'smooth',
+    });
+  };
+
 
   return (
     <>
-      <Header scrollTo={{handleScrollToCarta, handleScrollToReservar}} />
-      <Carousel />
+      <Header scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} />
+      <div ref={inicioRef}>
+
+        <Carousel />
+
+      </div>
       <div ref={cartaRef}>
         <Carta />
       </div>

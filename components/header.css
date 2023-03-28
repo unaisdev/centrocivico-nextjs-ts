@@ -25,15 +25,26 @@ header {
 .hide {
   visibility: hidden;
   opacity: 0;
+  display: none;
+
 }
 
 .menu-mobile {
   background-color: red;
   opacity: 1;
-  transition: opacity 0.6s, visibility 0.6s;
+  transition: opacity 0.6s, display 0.6s;
+}
+
+.header_normal {
+  transition: transform 0.3s ease-in-out;
+
+  transform: translateY(0px) scale(1);
+  background-color: Peru;
 }
 
 .header_scrolled {
+  transition: transform 0.3s ease-in-out;
+
   transform: translateY(-30px) scale(1);
   background-color: Peru;
 }
@@ -43,17 +54,12 @@ header {
 }
 
 .small-image {
-  transform: translateY(-100px) scale(0.5);
-  transition: transform 0.3s ease-in-out;
-}
-
-.medium-image {
-  transform: translateY(-70px) scale(0.6);
+  transform: translateY(-70px) scale(0.5);
   transition: transform 0.3s ease-in-out;
 }
 
 .large-image {
-  transform: translateY(-70px) scale(0.7);
+  transform: translateY(-60px) scale(0.7);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -70,6 +76,11 @@ header {
     transition: transform 0.3s ease-in-out;
   }
 
+  .medium-image {
+  transform: translateY(-60px) scale(0.6);
+  transition: transform 0.3s ease-in-out;
+}
+
   .large-image {
     transform: translateY(-50px) scale(0.7);
     transition: transform 0.3s ease-in-out;
@@ -85,13 +96,40 @@ nav {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
+
 }
+
+nav .normal {
+  transform: translateY(0px);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+nav .scrolled {
+  transform: translateY(15px);
+  transition: transform 0.3s ease-in-out;
+
+}
+
 
 ul {
   height: inherit;
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
+  
+}
+
+ul .scrolled {
+  transform: translateY(20px);
+  transition: transform 0.3s ease-in-out;
+
+}
+
+ul .normal {
+  transform: translateY(0px);
+  transition: transform 0.3s ease-in-out;
+
 }
 
 .link-header {
