@@ -24,12 +24,6 @@ export default function Home() {
     setMenuOpen(!menuOpen);
   };
 
-  useEffect(() => {
-    const btn = document.querySelector('#react-burger-menu-btn');
-    if (btn) {
-      btn.classList.add('no-styles');
-    }
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,25 +49,29 @@ export default function Home() {
 
 
   const handleScrollToCarta = () => {
-    console.log("scrolling");
-
     const offsetTop = cartaRef?.current?.offsetTop ?? 0
+
+    console.log("scrolling carta" + offsetTop);
 
     window.scrollTo({
       top: offsetTop - 150,
       behavior: 'smooth',
     });
+    handleMenuToggle()
+
   };
 
   const handleScrollToReservar = () => {
-    console.log("scrolling");
 
     const offsetTop = reservarRef?.current?.offsetTop ?? 0
+    console.log("scrolling reserva" + offsetTop);
 
     window.scrollTo({
       top: offsetTop - 150,
       behavior: 'smooth',
     });
+    handleMenuToggle()
+
   };
 
   const handleScrollToInicio = () => {
@@ -85,6 +83,8 @@ export default function Home() {
       top: offsetTop - 150,
       behavior: 'smooth',
     });
+    handleMenuToggle()
+
   };
 
 
@@ -114,7 +114,7 @@ export default function Home() {
         pageWrapId={ "page-wrap" }
         outerContainerId={"outer-container"}>
 
-        <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleMenuToggle(); handleScrollToCarta(); }}>
+        <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta(); }}>
           Carta
         </a>
         <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); handleScrollToReservar(); }}>
@@ -127,7 +127,6 @@ export default function Home() {
       </Menu>
 
       <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
-      <div id="page-wrap">
 
         <div ref={inicioRef}>
 
@@ -143,7 +142,6 @@ export default function Home() {
         </div>
         <Redes />
         <Footer />
-      </div>
 
     </div>
   )

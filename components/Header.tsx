@@ -24,7 +24,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
 
   return (
     <header className={`sticky px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ` header_normal`}`} >
-      <nav className="flex justify-center items-center flex-row lg:grid grid-rows-1 lg:grid-cols-3 ">
+      <nav className="flex justify-center items-center flex-row-reverse lg:grid grid-rows-1 lg:grid-cols-3 ">
         <ul id="navigation" className={`hidden lg:flex justify-center items-center  ${scrolled ? 'scrolled' : 'normal'}`}>
           <li>
             <Link className="link-header pl-6 pr-6" onClick={scrollTo.handleScrollToInicio} href="" >
@@ -55,13 +55,13 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
 
         // }}
         />
-        <ul className={`hidden lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm  ${scrolled ? 'scrolled' : 'normal'}`}>
+        <ul className={`absolute top-0 left-0 lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm  ${scrolled ? 'scrolled' : 'normal'}`}>
           <li className="flex items-center justify-end">
             <div className="flex flex-wrap flex-col-reverse items-start lg:items-end justify-center">
-              <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-sm">
-                <p>+34 <strong>629 57 54 68</strong></p>
+              <div className={`flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
+                <strong>629 57 54 68</strong>
                 <svg
-                  className="h-3 w-3 mx-0.5 lg:h-5 lg:w-5 lg:mx-2"
+                  className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -76,10 +76,10 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-sm">
+              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
                 <p>centrocivicoallo5@gmail.com</p>
                 <svg
-                  className="h-3 w-3 mx-0.5 lg:h-5 lg:w-5 lg:mx-2"
+                  className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -94,10 +94,10 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-sm mg:text-md">
+              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
                 <p style={{ whiteSpace: "nowrap" }}>P.º de la Fuente, 31262 Allo, Navarra</p>
                 <svg
-                  className="h-3 w-3 mx-0.5 lg:h-5 lg:w-5 lg:mx-2"
+                  className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.5"
@@ -116,17 +116,17 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
           </li>
         </ul>
 
-        <div className="absolute top-1 right-1 lg:hidden z-40">
-          <button onClick={handleMenuToggle} className="flex items-center p-1 border rounded text-amber-700 border-amber-900 hover:text-white hover:border-white">
+       
+        
+
+      </nav>
+      <div className={`absolute top-2 right-2 lg:hidden z-40  ${scrolled ? "moveDownMenuButton" : "moveUpMenuButton"}`}>
+          <button onClick={handleMenuToggle} className="flex items-center p-1  text-black hover:text-white hover:border-white">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
             </svg>
           </button>
         </div>
-        
-
-      </nav>
-
       {/* <div id='menu-mobile' className={`overflow-hidden w-full z-10 bg-white 
           ${scrolled ? "pt-24" : menuOpen ? "pt-40" : " pt-40"}
           flex items-center justify-center shadow-xl menu-mobile lg:hidden ${menuOpen ? 'flex' : 'hide hidden opacity-0'} `}>

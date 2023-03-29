@@ -87,6 +87,66 @@ header {
   .menu-mobile {
     display: none;
   }
+
+  .moveDown {
+    transform: translateY(15px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveUp {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveDownMenuButton {
+    transform: translateY(30px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveUpMenuButton {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 724px) {
+  #logo {
+    max-width: 300px;
+  }
+  .small-image {
+    transform: translateY(-60px) scale(0.4);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .medium-image {
+    transform: translateY(-60px) scale(0.5);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .large-image {
+    transform: translateY(-60px) scale(0.6);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveDown {
+    transform: translateY(15px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveUp {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveDownMenuButton {
+    transform: translateY(30px);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .moveUpMenuButton {
+    transform: translateY(0px);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
 .text-xxs {
