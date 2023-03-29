@@ -59,12 +59,12 @@ height: 100px;
   }
 
   .small-image {
-    transform: translateY(-110px) scale(0.4);
+    transform: translateY(-100px) scale(0.4);
     transition: transform 0.3s ease-in-out;
   }
 
   .medium-image {
-    transform: translateY(-110px) scale(0.4);
+    transform: translateY(-100px) scale(0.4);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -93,7 +93,7 @@ height: 100px;
   }
 
   .medium-image {
-    transform: translateY(-70px) scale(0.5);
+    transform: translateY(-80px) scale(0.5);
     transition: transform 0.3s ease-in-out;
   }
 

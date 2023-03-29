@@ -52,7 +52,6 @@ export default function Home() {
     const offsetTop = cartaRef?.current?.offsetTop ?? 0
 
     console.log("scrolling carta" + offsetTop);
-    console.log("menuopen" + menuOpen);
 
     window.scrollTo({
       top: offsetTop - 150,
@@ -113,15 +112,15 @@ export default function Home() {
           
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
-          <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta();  handleMenuToggle(); }}>
+          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta();  handleMenuToggle(); }}>
             Carta
-          </a>
-          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleScrollToReservar();  handleMenuToggle(); }}>
+          </button>
+          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToReservar();  handleMenuToggle(); }}>
             Reservar
-          </a>
-          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>
+          </button>
+          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleMenuToggle(); }}>
             Contacto
-          </a>
+          </button>
 
         </Menu>
         <main id="page-wrap">
