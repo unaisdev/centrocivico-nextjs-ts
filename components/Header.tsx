@@ -44,7 +44,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
         </ul>
         <Image
           onClick={scrollTo.handleScrollToInicio}
-          className={`md:max-w-sm relative -mb-72 z-20  ${scrolled ? "small-image" : menuOpen ? "medium-image" : " large-image"}`}
+          className={`md:max-w-md relative -mb-72 z-20  ${scrolled ? "small-image" : menuOpen ? "medium-image" : " large-image"}`}
           id="logo"
           src={logo}
           alt="Bar Restaurante Centro Cívico de Allo"
@@ -55,10 +55,10 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
 
         // }}
         />
-        <ul className={`absolute top-0 left-0 lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm  ${scrolled ? 'scrolled' : 'normal'}`}>
+        <ul className="absolute top-1 left-0 lg:relative lg:top-auto lg:flex items-center justify-center text-xxs lg:text-sm">
           <li className="flex items-center justify-end">
             <div className="flex flex-wrap flex-col-reverse items-start lg:items-end justify-center">
-              <div className={`flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
+              <div className="flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
                 <strong>629 57 54 68</strong>
                 <svg
                   className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -76,7 +76,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className={`hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
+              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
                 <p>centrocivicoallo5@gmail.com</p>
                 <svg
                   className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -94,7 +94,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className={`hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
+              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
                 <p style={{ whiteSpace: "nowrap" }}>P.º de la Fuente, 31262 Allo, Navarra</p>
                 <svg
                   className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -120,7 +120,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
         
 
       </nav>
-      <div className={`absolute top-2 right-2 lg:hidden z-40  ${scrolled ? "moveDownMenuButton" : "moveUpMenuButton"}`}>
+      <div className="absolute top-1 right-2 lg:hidden z-40">
           <button onClick={handleMenuToggle} className="flex items-center p-1  text-black hover:text-white hover:border-white">
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
