@@ -123,7 +123,7 @@ function ReservaForm() {
         </>
       ) : (
         <>
-          <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border-slate">
+          <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border">
             <div className="flex">
               <h1 className="font-bold uppercase text-5xl">Reserva con <br /> nosotros</h1>
             </div>

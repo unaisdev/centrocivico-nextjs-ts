@@ -52,6 +52,7 @@ export default function Home() {
     const offsetTop = cartaRef?.current?.offsetTop ?? 0
 
     console.log("scrolling carta" + offsetTop);
+    console.log("menuopen" + menuOpen);
 
     window.scrollTo({
       top: offsetTop - 150,
@@ -101,7 +102,7 @@ export default function Home() {
   }
 
   return (
-    <div id="outer-container">
+    <>
 
       <Menu
         isOpen={menuOpen}
@@ -110,14 +111,12 @@ export default function Home() {
         className="!w-full flex justify-center items-center"
         menuClassName='flex !h-auto flex-row justify-center'
         itemListClassName='flex flex-col justify-center'
-        crossButtonClassName='bg-red-800'
-        pageWrapId={ "page-wrap" }
-        outerContainerId={"outer-container"}>
+        crossButtonClassName='bg-red-800'>
 
         <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta(); }}>
           Carta
         </a>
-        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); handleScrollToReservar(); }}>
+        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => {  handleScrollToReservar(); }}>
           Reservar
         </a>
         <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>
@@ -143,6 +142,6 @@ export default function Home() {
         <Redes />
         <Footer />
 
-    </div>
+    </>
   )
 }
