@@ -58,7 +58,6 @@ export default function Home() {
       top: offsetTop - 150,
       behavior: 'smooth',
     });
-    handleMenuToggle()
 
   };
 
@@ -71,7 +70,6 @@ export default function Home() {
       top: offsetTop - 150,
       behavior: 'smooth',
     });
-    handleMenuToggle()
 
   };
 
@@ -84,20 +82,18 @@ export default function Home() {
       top: offsetTop - 150,
       behavior: 'smooth',
     });
-    handleMenuToggle()
 
   };
 
 
-  function BurgerIcon() {
+  function CloseIcon() {
     return (
       <button
         id="my-burger-icon"
         style={{ /* Your custom styles here */ }}
         onClick={handleMenuToggle}
       >
-        Open Menu
-      </button>
+         </button>
     );
   }
 
@@ -113,13 +109,14 @@ export default function Home() {
           className="!w-full flex justify-center items-center"
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
-          crossButtonClassName='bg-red-800'
+          crossButtonClassName='bg-red-800 p-6'
+          
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
-          <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta(); }}>
+          <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta();  handleMenuToggle(); }}>
             Carta
           </a>
-          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleScrollToReservar(); }}>
+          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleScrollToReservar();  handleMenuToggle(); }}>
             Reservar
           </a>
           <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>

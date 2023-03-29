@@ -17,6 +17,7 @@
 }
 
 header {
+height: 100px;
   transform: translateY(0px);
   transition: transform 0.8s ease-in-out;
   background-color: Peru;
@@ -45,7 +46,7 @@ header {
 }
 
 .large-image {
-  transform: translateY(-60px) scale(0.7);
+  transform: translateY(-30px) scale(0.7);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -92,7 +93,7 @@ header {
   }
 
   .medium-image {
-    transform: translateY(-40px) scale(0.5);
+    transform: translateY(-70px) scale(0.5);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -109,7 +110,7 @@ header {
 }
 
 nav {
-  height: auto;
+  height: -webkit-fill-available;
   display: flex;
   position: relative;
   flex-flow: row nowrap;

@@ -25,7 +25,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
   return (
     <header className={`fixed px-2 sm:px-4 py-2.5 w-full z-20 top-0 left-0 border-b border-gray-200 ${scrolled ? ` header_scrolled` : ` header_normal`}`} >
       <nav className="flex justify-center items-center flex-row-reverse lg:grid grid-rows-1 lg:grid-cols-3 ">
-        <ul id="navigation" className={`hidden lg:flex justify-center items-center  ${scrolled ? 'scrolled' : 'normal'}`}>
+        <ul id="navigation" className="hidden lg:flex justify-center items-center">
           <li>
             <Link className="link-header pl-6 pr-6" onClick={scrollTo.handleScrollToInicio} href="" >
               Inicio
