@@ -44,7 +44,7 @@ header {
 .header_scrolled {
   transition: transform 0.3s ease-in-out;
 
-  transform: translateY(-30px) scale(1);
+  transform: translateY(-20px) scale(1);
   background-color: Peru;
 }
 
@@ -89,7 +89,7 @@ header {
   }
 
   .moveDown {
-    transform: translateY(15px);
+    transform: translateY(5px);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -129,7 +129,7 @@ header {
   }
 
   .moveDown {
-    transform: translateY(15px);
+    transform: translateY(10px);
     transition: transform 0.3s ease-in-out;
   }
 

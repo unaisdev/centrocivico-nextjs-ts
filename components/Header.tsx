@@ -76,7 +76,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
+              <div className={`hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
                 <p>centrocivicoallo5@gmail.com</p>
                 <svg
                   className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -94,7 +94,7 @@ const Header = ({ scrollTo, scrolled, menuOpen, handleMenuToggle }: Props) => {
                   ></path>
                 </svg>
               </div>
-              <div className="hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
+              <div className={`hidden sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm  ${scrolled ? "moveDown" : "moveUp"}`}>
                 <p style={{ whiteSpace: "nowrap" }}>P.º de la Fuente, 31262 Allo, Navarra</p>
                 <svg
                   className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
