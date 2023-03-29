@@ -10,12 +10,19 @@ import Redes from '@/components/Redes'
 import Reserva from '@/components/Reserva'
 import ContactForm from '@/components/ContactForm'
 import { useEffect, useRef, useState } from 'react'
+import { slide as Menu } from 'react-burger-menu'
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
   const cartaRef = useRef<HTMLDivElement | null>(null);
   const reservarRef = useRef<HTMLDivElement | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +31,7 @@ export default function Home() {
 
       console.log(scrollPosition)
 
-      if (scrollPosition > 30) {
+      if (scrollPosition > 60) {
         setScrolled(true);
 
       } else {
@@ -76,7 +83,28 @@ export default function Home() {
 
   return (
     <>
-      <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} />
+
+      <Menu
+        isOpen={menuOpen}
+        onClose={handleMenuToggle}
+        className="!w-full flex justify-center items-center"
+        menuClassName='flex !h-auto flex-row justify-center bg-gray-500'
+        itemListClassName='flex flex-col justify-center'
+        crossButtonClassName="bg-red-400">
+
+        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); handleScrollToCarta(); }}>
+          Carta
+        </a>
+        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); handleScrollToReservar(); }}>
+          Reservar
+        </a>
+        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); }}>
+          Contacto
+        </a>
+
+      </Menu>
+
+      <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
       <div className={`${scrolled ? 'page_scrolled' : 'page_normal'}`} >
         <div ref={inicioRef}>
 
