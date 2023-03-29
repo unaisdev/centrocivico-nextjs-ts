@@ -32,7 +32,7 @@ export default function Home() {
 
       console.log(scrollPosition)
 
-      if (scrollPosition > 60) {
+      if (scrollPosition > 0) {
         setScrolled(true);
 
       } else {
@@ -103,45 +103,50 @@ export default function Home() {
 
   return (
     <>
+      <div id="outer-container">
+        <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
 
-      <Menu
-        isOpen={menuOpen}
-        onClose={handleMenuToggle}
-        burgerButtonClassName='hidden'
-        className="!w-full flex justify-center items-center"
-        menuClassName='flex !h-auto flex-row justify-center'
-        itemListClassName='flex flex-col justify-center'
-        crossButtonClassName='bg-red-800'>
+        <Menu
+          isOpen={menuOpen}
+          onClose={handleMenuToggle}
+          burgerButtonClassName='hidden'
+          className="!w-full flex justify-center items-center"
+          menuClassName='flex !h-auto flex-row justify-center'
+          itemListClassName='flex flex-col justify-center'
+          crossButtonClassName='bg-red-800'
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}>
+          <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta(); }}>
+            Carta
+          </a>
+          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleScrollToReservar(); }}>
+            Reservar
+          </a>
+          <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>
+            Contacto
+          </a>
 
-        <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleScrollToCarta(); }}>
-          Carta
-        </a>
-        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => {  handleScrollToReservar(); }}>
-          Reservar
-        </a>
-        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>
-          Contacto
-        </a>
+        </Menu>
+        <main id="page-wrap">
 
-      </Menu>
 
-      <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
+          <div ref={inicioRef}>
 
-        <div ref={inicioRef}>
+            <Carousel />
 
-          <Carousel />
+          </div>
+          <div ref={cartaRef}>
+            <Carta />
+          </div>
+          <div ref={reservarRef}>
+            <Reserva />
 
-        </div>
-        <div ref={cartaRef}>
-          <Carta />
-        </div>
-        <div ref={reservarRef}>
-          <Reserva />
-
-        </div>
-        <Redes />
-        <Footer />
-
+          </div>
+          <Redes />
+          <Footer />
+        </main>
+      </div>
     </>
+
   )
 }
