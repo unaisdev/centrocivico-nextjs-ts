@@ -26,7 +26,6 @@ header {
   visibility: hidden;
   opacity: 0;
   display: none;
-
 }
 
 .menu-mobile {
@@ -77,13 +76,16 @@ header {
   }
 
   .medium-image {
-  transform: translateY(-60px) scale(0.6);
-  transition: transform 0.3s ease-in-out;
-}
+    transform: translateY(-60px) scale(0.6);
+    transition: transform 0.3s ease-in-out;
+  }
 
   .large-image {
     transform: translateY(-50px) scale(0.7);
     transition: transform 0.3s ease-in-out;
+  }
+  .menu-mobile {
+    display: none;
   }
 }
 
@@ -96,40 +98,33 @@ nav {
   display: flex;
   position: relative;
   flex-flow: row nowrap;
-
 }
 
 nav .normal {
   transform: translateY(0px);
   transition: transform 0.3s ease-in-out;
-
 }
 
 nav .scrolled {
   transform: translateY(15px);
   transition: transform 0.3s ease-in-out;
-
 }
-
 
 ul {
   height: inherit;
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
-  
 }
 
 ul .scrolled {
   transform: translateY(20px);
   transition: transform 0.3s ease-in-out;
-
 }
 
 ul .normal {
   transform: translateY(0px);
   transition: transform 0.3s ease-in-out;
-
 }
 
 .link-header {

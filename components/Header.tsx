@@ -137,8 +137,8 @@ const Header = ({ scrollTo, scrolled }: Props) => {
 
       <div id='menu-mobile' className={`overflow-hidden w-full z-10 bg-white 
           ${scrolled ? "pt-24" : menuOpen ? "pt-40" : " pt-40"}
-          flex items-center justify-center shadow-xl menu-mobile ${menuOpen ? 'flex' : 'hide hidden opacity-0'} `}>
-        <nav className='flex flex-col items-center justify-center'>
+          flex items-center justify-center shadow-xl menu-mobile lg:hidden ${menuOpen ? 'flex' : 'hide hidden opacity-0'} `}>
+        <nav className='flex flex-col items-center justify-center '>
           <a onClick={onCartaMobileMenuClick} className='py-4'>CARTA</a>
           <a onClick={onReservarMobileMenuClick} className='py-4'>RESERVAS</a>
           <a className='py-4'>CONTACTO</a>
