@@ -113,8 +113,13 @@ header {
   #logo {
     max-width: 300px;
   }
+
+  header {
+    height: 70px;
+  }
+
   .small-image {
-    transform: translateY(-40px) scale(0.4);
+    transform: translateY(-70px) scale(0.4);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -131,12 +136,12 @@ header {
   .header_scrolled {
     transition: transform 0.3s ease-in-out;
 
-    transform: translateY(-50px) scale(1);
+    transform: translateY(-20px) scale(1);
     background-color: Peru;
   }
 
   .moveDown {
-    transform: translateY(40px);
+    transform: translateY(10px);
     transition: transform 0.3s ease-in-out;
   }
 
@@ -146,7 +151,7 @@ header {
   }
 
   .moveDownMenuButton {
-    transform: translateY(50px);
+    transform: translateY(20px);
     transition: transform 0.3s ease-in-out;
   }
 
