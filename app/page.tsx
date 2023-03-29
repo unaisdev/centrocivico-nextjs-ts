@@ -25,6 +25,13 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const btn = document.querySelector('#react-burger-menu-btn');
+    if (btn) {
+      btn.classList.add('no-styles');
+    }
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
       const scrollPosition = window.scrollY;
@@ -81,31 +88,47 @@ export default function Home() {
   };
 
 
+  function BurgerIcon() {
+    return (
+      <button
+        id="my-burger-icon"
+        style={{ /* Your custom styles here */ }}
+        onClick={handleMenuToggle}
+      >
+        Open Menu
+      </button>
+    );
+  }
+
   return (
-    <>
+    <div id="outer-container">
 
       <Menu
         isOpen={menuOpen}
         onClose={handleMenuToggle}
+        burgerButtonClassName='hidden'
         className="!w-full flex justify-center items-center"
-        menuClassName='flex !h-auto flex-row justify-center bg-gray-500'
+        menuClassName='flex !h-auto flex-row justify-center'
         itemListClassName='flex flex-col justify-center'
-        crossButtonClassName="bg-red-400">
+        crossButtonClassName='bg-red-800'
+        pageWrapId={ "page-wrap" }
+        outerContainerId={"outer-container"}>
 
-        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); handleScrollToCarta(); }}>
+        <a className="text-4xl uppercase text-white text-center my-6 " href="#" onClick={() => { handleMenuToggle(); handleScrollToCarta(); }}>
           Carta
         </a>
-        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); handleScrollToReservar(); }}>
+        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); handleScrollToReservar(); }}>
           Reservar
         </a>
-        <a className="text-3xl uppercase" href="#" onClick={() => { handleMenuToggle(); }}>
+        <a className="text-4xl uppercase text-white text-center my-6" href="#" onClick={() => { handleMenuToggle(); }}>
           Contacto
         </a>
 
       </Menu>
 
       <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
-      <div className={`${scrolled ? 'page_scrolled' : 'page_normal'}`} >
+      <div id="page-wrap">
+
         <div ref={inicioRef}>
 
           <Carousel />
@@ -122,6 +145,6 @@ export default function Home() {
         <Footer />
       </div>
 
-    </>
+    </div>
   )
 }

@@ -11,3 +11,8 @@
   transform: translateY(-30px) scale(1);
   background-color: Peru;
 }
+
+#react-burger-menu-btn{
+  width: 0px !important;
+  height: 0px !important;
+}
