@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import styles from './page.module.css'
 import Carousel from '@/components/Carousel'
 import Carta from '@/components/Carta'
 import Footer from '@/components/Footer'
@@ -11,6 +10,8 @@ import Reserva from '@/components/Reserva'
 import ContactForm from '@/components/ContactForm'
 import { useEffect, useRef, useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
+import { Analytics } from '@vercel/analytics/react'
+
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
@@ -92,30 +93,31 @@ export default function Home() {
         style={{ /* Your custom styles here */ }}
         onClick={handleMenuToggle}
       >
-         </button>
+      </button>
     );
   }
 
   return (
     <>
-      <div id="outer-container">
+      <div id="outer-container menu-overlay">
         <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} menuOpen={menuOpen} handleMenuToggle={handleMenuToggle} />
 
         <Menu
           isOpen={menuOpen}
           onClose={handleMenuToggle}
           burgerButtonClassName='hidden'
+          overlayClassName='menu-overlay'
           className="!w-full flex justify-center items-center"
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
           crossButtonClassName='bg-red-800 p-6'
-          
+
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
-          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta();  handleMenuToggle(); }}>
+          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta(); handleMenuToggle(); }}>
             Carta
           </button>
-          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToReservar();  handleMenuToggle(); }}>
+          <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToReservar(); handleMenuToggle(); }}>
             Reservar
           </button>
           <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleMenuToggle(); }}>
@@ -139,8 +141,10 @@ export default function Home() {
 
           </div>
           <Redes />
+
           <Footer />
         </main>
+        <Analytics/>
       </div>
     </>
 
