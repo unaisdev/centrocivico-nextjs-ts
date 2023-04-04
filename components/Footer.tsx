@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <>
             <footer aria-label="Site Footer" className="bg-gray-100 border-t-gray-800">
-                <div className="relative mx-auto max-w-screen-xl px-2 py-2 ">
+                <div className="flex justify-center mx-auto max-w-screen-xl px-2 py-2 ">
                     
 
                     <div className="py-2 lg:flex lg:items-center lg:justify-center">

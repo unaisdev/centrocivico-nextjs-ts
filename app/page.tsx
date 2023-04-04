@@ -93,31 +93,28 @@ export default function Home() {
 
   function CloseIcon() {
     return (
-      <button
-        id="my-burger-icon"
-        style={{ /* Your custom styles here */ }}
-        onClick={handleMenuToggle}
-      >
-      </button>
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
     );
   }
 
   return (
     <>
       <div id="outer-container">
-        <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }} 
-        menuOpen={menuOpen} infoOpen={infoOpen} handleMenuToggle={handleMenuToggle} handleInfoToggle={handleInfoToggle} />
+        <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }}
+          menuOpen={menuOpen} infoOpen={infoOpen} handleMenuToggle={handleMenuToggle} handleInfoToggle={handleInfoToggle} />
 
         <Menu
           isOpen={menuOpen}
           onClose={handleMenuToggle}
           burgerButtonClassName='hidden'
           overlayClassName='menu-overlay'
-          className="!w-full flex justify-center items-center"
+          className="!w-full flex justify-center items-center !bg-black/75"
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
-          crossButtonClassName='bg-red-800 p-6'
-
+          crossButtonClassName='!h-8 !w-8 bg-red-600 rounded'
+          customCrossIcon={ <CloseIcon /> }
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
           <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta(); handleMenuToggle(); }}>
@@ -137,15 +134,15 @@ export default function Home() {
           onClose={handleInfoToggle}
           burgerButtonClassName='hidden'
           overlayClassName='menu-overlay'
-          className="!w-full flex justify-center items-center"
+          className="!w-full flex justify-center items-center !bg-black/75"
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
-          crossButtonClassName='bg-red-800 p-6'
-
+          crossButtonClassName='!h-8 !w-8 bg-red-600 rounded '
+          customCrossIcon={ <CloseIcon /> }
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
           <div className="bg-white">
-            <div className="sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
+            <div className="">
               <strong>629 57 54 68</strong>
               <svg
                 className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -163,7 +160,7 @@ export default function Home() {
                 ></path>
               </svg>
             </div>
-            <div className="sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
+            <div className="">
               <p>centrocivicoallo5@gmail.com</p>
               <svg
                 className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
@@ -181,7 +178,7 @@ export default function Home() {
                 ></path>
               </svg>
             </div>
-            <div className="sm:flex flex-wrap flex-row-reverse lg:flex-row items-center justify-end text-xxs md:text-sm">
+            <div className="">
               <p style={{ whiteSpace: "nowrap" }}>P.º de la Fuente, 31262 Allo, Navarra</p>
               <svg
                 className="h-3 w-3 mx-1 lg:h-5 lg:w-5 lg:mx-2"
