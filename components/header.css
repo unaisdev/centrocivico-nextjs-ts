@@ -17,7 +17,7 @@
 }
 
 header {
-height: 100px;
+  height: 100px;
   transform: translateY(0px);
   transition: transform 0.8s ease-in-out;
   background-color: Peru;
@@ -41,12 +41,12 @@ height: 100px;
 }
 
 .small-image {
-  transform: translateY(-70px) scale(0.5);
+  transform: translateY(-110px) scale(0.5);
   transition: transform 0.3s ease-in-out;
 }
 
 .large-image {
-  transform: translateY(-30px) scale(0.7);
+  transform: translateY(-60px) scale(0.7);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -55,7 +55,7 @@ height: 100px;
     max-width: 350px;
   }
   header {
-    height: 70px;
+    height: 90px;
   }
 
   .small-image {
@@ -78,9 +78,15 @@ height: 100px;
 
 }
 
-@media screen and (max-width: 524px) {
+@media screen and (max-width: 724px) {
+  header {
+
+  }
+}
+
+@media screen and (max-width: 638px) {
   #logo {
-    max-width: 300px;
+    max-width: 250px;
   }
 
 
@@ -89,17 +95,17 @@ height: 100px;
   }
 
   .small-image {
-    transform: translateY(-110px) scale(0.3);
+    transform: translateY(-90px) scale(0.3);
     transition: transform 0.3s ease-in-out;
   }
 
   .medium-image {
-    transform: translateY(-80px) scale(0.5);
+    transform: translateY(-65px) scale(0.5);
     transition: transform 0.3s ease-in-out;
   }
 
   .large-image {
-    transform: translateY(-60px) scale(0.6);
+    transform: translateY(-50px) scale(0.6);
     transition: transform 0.3s ease-in-out;
   }
 

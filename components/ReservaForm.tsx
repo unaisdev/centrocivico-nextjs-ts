@@ -17,6 +17,11 @@ const toJsonInputs = (data: Reserva): string => {
   return json;
 };
 
+function convertDateFormat(dateStr: string): string {
+  const [year, month, day] = dateStr.split('-');
+  return `${day}/${month}/${year}`;
+}
+
 function ReservaForm() {
   const router = useRouter();
   const [formValues, setFormValues] = useState<Reserva>({
@@ -40,6 +45,11 @@ function ReservaForm() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
+    
+    console.log(toJsonInputs(formValues)); // maneja la respuesta de la API según corresponda
+
+    formValues.dia = convertDateFormat(formValues.dia);
+    console.log(toJsonInputs(formValues)); // maneja la respuesta de la API según corresponda
 
     setTimeout(async () => {
       try {
