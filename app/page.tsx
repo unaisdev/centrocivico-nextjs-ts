@@ -11,7 +11,7 @@ import ContactForm from '@/components/ContactForm'
 import { useEffect, useRef, useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import { Analytics } from '@vercel/analytics/react'
-
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
@@ -101,6 +101,8 @@ export default function Home() {
 
   return (
     <>
+      <GoogleAnalytics trackPageViews />
+
       <div id="outer-container">
         <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }}
           menuOpen={menuOpen} infoOpen={infoOpen} handleMenuToggle={handleMenuToggle} handleInfoToggle={handleInfoToggle} />
@@ -114,7 +116,7 @@ export default function Home() {
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
           crossButtonClassName='!h-8 !w-8 bg-red-600 rounded'
-          customCrossIcon={ <CloseIcon /> }
+          customCrossIcon={<CloseIcon />}
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
           <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta(); handleMenuToggle(); }}>
@@ -138,7 +140,7 @@ export default function Home() {
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
           crossButtonClassName='!h-8 !w-8 bg-red-600 rounded '
-          customCrossIcon={ <CloseIcon /> }
+          customCrossIcon={<CloseIcon />}
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
           <div className="bg-white">
