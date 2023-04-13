@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import { Analytics } from '@vercel/analytics/react'
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import Cookies from '@/components/Cookies'
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
@@ -101,11 +102,16 @@ export default function Home() {
 
   return (
     <>
-      <GoogleAnalytics trackPageViews />
+      {/* <GoogleAnalytics trackPageViews /> */}
 
       <div id="outer-container">
-        <Header scrolled={scrolled} scrollTo={{ handleScrollToCarta, handleScrollToReservar, handleScrollToInicio }}
-          menuOpen={menuOpen} infoOpen={infoOpen} handleMenuToggle={handleMenuToggle} handleInfoToggle={handleInfoToggle} />
+        <Header
+          scrolled={scrolled}
+          scrollTo={{ handleScrollToInicio, handleScrollToCarta, handleScrollToReservar }}
+          menuOpen={menuOpen}
+          infoOpen={infoOpen}
+          handleMenuToggle={handleMenuToggle}
+          handleInfoToggle={handleInfoToggle} />
 
         <Menu
           isOpen={menuOpen}
@@ -220,6 +226,7 @@ export default function Home() {
 
           <Footer />
         </main>
+        <Cookies />
         <Analytics />
       </div>
     </>

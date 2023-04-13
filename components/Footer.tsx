@@ -20,7 +20,7 @@ const Footer = () => {
                             <p
                                 className="max-w-md text-center leading-relaxed text-gray-500 text-xs md:text-sm"
                             >
-                                <strong>Gure Ametsa</strong> | <span className="text-xxs md:text-xs">diseñado por</span>  <a href="http://github.io/unaisdev">Unai Canales</a>
+                                <strong>Gure Ametsa</strong> | <span className="text-xxs md:text-xs">diseñado por</span>  <a href="https://github.com/unaisdev">Unai Canales</a>
 
 
                             </p>

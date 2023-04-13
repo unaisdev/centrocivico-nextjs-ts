@@ -1,0 +1,14 @@
+.cookies {
+  opacity: 1;
+}
+
+.dismiss {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1s;
+}
+
+.text-2xs {
+    font-size: 0.55rem/* 10px */;
+    line-height: 0.9rem/* 16px */;
+}
