@@ -4,7 +4,7 @@ import './cookies.css'
 
 const Cookies = () => {
     const [cookies, setCookie, removeCookie] = useCookies(['acceptedCookies']);
-    const [viewCookieMessage, setViewCookieMessage] = useState<boolean>()
+    const [viewCookieMessage, setViewCookieMessage] = useState<boolean>(true)
     // const [viewCookieMessage, setViewCookieMessage] = useState<Boolean>(true)
     const [openDialog, setOpenDialog] = useState<boolean>(true)
 
