@@ -12,13 +12,35 @@ type MailOptions = {
 };
 
 const reservaSchema = Joi.object({
-  nombre: Joi.string().min(3).max(50).required(),
-  dia: Joi.string().required(),
-  hora: Joi.string().required(),
-  telefono: Joi.string().allow(null),
-  email: Joi.string().email().required(),
+  id: Joi.number().required().messages({
+    "any.required": 'El campo "id" es obligatorio',
+    "number.base": 'El campo "id" debe ser un número',
+  }),
+  nombre: Joi.string().min(3).max(50).required().messages({
+    "any.required": 'El campo "nombre" es obligatorio',
+    "string.min": 'El campo "nombre" debe tener al menos {#limit} caracteres',
+    "string.max":
+      'El campo "nombre" debe tener como máximo {#limit} caracteres',
+  }),
+  dia: Joi.string().required().messages({
+    "any.required": 'El campo "dia" es obligatorio',
+  }),
+  hora: Joi.string().required().messages({
+    "any.required": 'El campo "hora" es obligatorio',
+  }),
+  telefono: Joi.string().allow(null).messages({
+    "string.base": 'El campo "telefono" debe ser un texto',
+  }),
+  email: Joi.string().email().required().messages({
+    "any.required": 'El campo "email" es obligatorio',
+    "string.email":
+      'El campo "email" debe ser una dirección de correo electrónico válida',
+  }),
   mas_info: Joi.string().allow(null),
-  personas: Joi.number().required(),
+  personas: Joi.number().required().messages({
+    "any.required": 'El campo "personas" es obligatorio',
+    "number.base": 'El campo "personas" debe ser un número',
+  }),
 });
 
 const prisma = new PrismaClient();
@@ -29,13 +51,12 @@ interface SearchParams {
 }
 
 function toJson(data: reserva[] | reserva) {
-  return JSON.stringify(
-    data,
-    (_, v) => (typeof v === "bigint" ? `${v}n` : v),
+  return JSON.stringify(data, (_, v) =>
+    typeof v === "bigint" ? `${v}n` : v
   ).replace(/"(-?\d+)n"/g, (_, a) => a);
 }
 
-const sendConfirmationEmail = async (reserva : reserva) => {
+const sendConfirmationEmail = async (reserva: reserva) => {
   try {
     const transporter = await createTransporter();
 
@@ -102,7 +123,6 @@ const sendConfirmationEmail = async (reserva : reserva) => {
   }
 };
 
-
 //https://www.prisma.io/docs/concepts/components/prisma-client/advanced-type-safety/prisma-validator
 prisma.$use(async (params, next) => {
   // Manipulate params here
@@ -162,7 +182,7 @@ export async function POST(request: Request) {
   const response: reserva = await new Response(request.body).json();
 
   try {
-    await reservaSchema.validateAsync(response);
+    await reservaSchema.validateAsync(response, { abortEarly: false });
 
     const newReserva = await prisma.reserva.create({
       data: response,
@@ -173,9 +193,13 @@ export async function POST(request: Request) {
 
     return new Response(`${toJson(newReserva)}`);
   } catch (error: any) {
-    console.log(error.message);
 
-    return new Response(error.message);
+    const errors = error.details.map((detail: any) => ({
+      field: detail.context.key,
+      message: detail.message.replace(/['"]/g, ""),
+    }));
+
+    return new Response(JSON.stringify({ errors }));
   } finally {
   }
 }
