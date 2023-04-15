@@ -2,13 +2,17 @@
   font-family: sans-serif;
 }
 
-img {
-  pointer-events: none;
-}
 
 .react-multi-carousel-track {
   user-select: none;
   display: flex;
   justify-content: 'center';
   align-items: center;
+}
+
+
+@media (max-width: 450px) {
+  #page-wrap >  > div > ul > li > div > div > div > img {
+    width: 250px;
+  }
 }
