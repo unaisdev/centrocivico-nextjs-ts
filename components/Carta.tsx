@@ -575,12 +575,6 @@ const Carta = () => {
 
                 </div>
 
-                <div className="row d-flex justify-content-center">
-                    <div className="col-sm-6 col-sm-offset-3">
-                        <div className="devider">
-                        </div>
-                    </div>
-                </div>
 
 
             </div>

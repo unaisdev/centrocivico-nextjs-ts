@@ -193,7 +193,7 @@ export async function POST(request: Request) {
 
     return new Response(`${toJson(newReserva)}`);
   } catch (error: any) {
-
+    
     const errors = error.details.map((detail: any) => ({
       field: detail.context.key,
       message: detail.message.replace(/['"]/g, ""),

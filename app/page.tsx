@@ -114,6 +114,10 @@ export default function Home() {
           handleMenuToggle={handleMenuToggle}
           handleInfoToggle={handleInfoToggle} />
 
+        {/* 
+          * 
+          */}
+          
         <Menu
           isOpen={menuOpen}
           onClose={handleMenuToggle}
