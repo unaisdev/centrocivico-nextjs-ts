@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Reserva } from '@/interfaces/Reserva';
+import moment from 'moment';
 
 const toJsonInputs = (data: Reserva): string => {
   const json = `{
@@ -27,8 +28,8 @@ function ReservaForm() {
   const [formValues, setFormValues] = useState<Reserva>({
     nombre: '',
     email: '',
-    dia: '',
-    hora: '',
+    dia: moment().format('YYYY-MM-DD'),
+    hora:  moment().format('HH:mm'),
     personas: 0,
     telefono: '',
     mas_info: ''
@@ -59,19 +60,20 @@ function ReservaForm() {
             'Content-Type': 'application/json',
           },
           body: toJsonInputs(formValues),
+        }).then(response => {
+          console.log(toJsonInputs(formValues)); // maneja la respuesta de la API según corresponda
+          console.log(response); // maneja la respuesta de la API según corresponda
+  
+          //  router.push('/confirmacion', );
+  
+          setIsSubmitted(true)
+  
+          if (!response.ok) {
+            throw new Error('Error al enviar el formulario');
+          }
         });
-        console.log(toJsonInputs(formValues)); // maneja la respuesta de la API según corresponda
-        console.log(response); // maneja la respuesta de la API según corresponda
+        
 
-        //  router.push('/confirmacion', );
-
-        setIsSubmitted(true)
-
-        if (!response.ok) {
-          throw new Error('Error al enviar el formulario');
-        }
-
-        return await response.json();
       } catch (error) {
         console.error(error);
       } finally {
@@ -83,31 +85,7 @@ function ReservaForm() {
 
   return (
     <form onSubmit={handleSubmit} method="POST">
-      {isSubmitting ? (
-        <>
-          <div className="w-8/12 p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border-slate">
-            <div className="flex">
-              <h1 className="font-bold uppercase text-5xl">Enviando solicitud de reserva...</h1>
-            </div>
-
-          </div>
-
-          <div
-            className="w-4/12 lg:-mt-96 lg:w-2/6 px-8 py-12 ml-auto shadow-2xl bg-yellow-500 rounded-2xl">
-            <div className="flex flex-col text-white">
-              <h1 className="font-bold text-neutral-900 uppercase text-4xl my-4">Encantados de atenderte</h1>
-              <p className="text-neutral-100">Nuestra principal especialidad es cocinar, pero la segunda es tratar a los clientes como si estuviesen en casa. <br />
-                <br />Para cualquier duda sobre la reserva, estaremos encantados de resolverla mediante nuestro correo electrónico o el número de telefono: <strong> 943612043 </strong>
-              </p>
-              <a href="/contacto" className="uppercase text-sm text-center font-bold tracking-wide my-4 bg-yellow-600 text-gray-100 p-3 rounded-lg w-full 
-              focus:outline-none focus:shadow-outline">
-                CONTACTAR
-              </a>
-
-            </div>
-          </div>
-        </>
-      ) : isSubmitted ? (
+      {isSubmitted ? (
         <>
           <div className="w-full p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border-slate">
             <div className="flex">
@@ -153,7 +131,7 @@ function ReservaForm() {
                 name="dia" type="date" value={formValues.dia} onChange={handleInputChange} required />
 
               <input className="w-full col-span-1 md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                name="hora" type="time" value={formValues.hora} onChange={handleInputChange} required />
+                name="hora" type="time" placeholder="¿Cuántos? *" value={formValues.hora} onChange={handleInputChange} required />
             </div>
             <div className="my-4">
               <textarea value={formValues.mas_info} onChange={handleInputChange} name="mas_info" placeholder="¿Cualquier cosa a comentar sobre la reserva? Carrito de bebé, silla de ruedas..." className="w-full h-16 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
