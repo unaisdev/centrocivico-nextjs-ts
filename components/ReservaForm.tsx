@@ -157,7 +157,7 @@ function ReservaForm() {
               <h1 className="font-bold text-neutral-900 uppercase text-4xl my-4">Dónde estamos</h1>
               <iframe className="rounded-md mb-8" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11753.632045704275!2d-2.0215937!3d42.5678616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd507713f1b4997f%3A0xb4060da504aff80c!2sBAR%20RESTAURANTE%20CENTRO%20C%C3%8DVICO%20DE%20ALLO!5e0!3m2!1ses!2ses!4v1681580686617!5m2!1ses!2ses" loading="lazy"></iframe>
               <div className="grid grid-cols-2 gap-10">
-                <div className='col-start-2 col-span-1'>
+                <div className=' col-span-1'>
                   <p className="text-neutral-900">
                     Higer Bidea, 6,
                   </p>
