@@ -202,6 +202,14 @@ const Carta = () => {
 
                 </div>
 
+                <div className="flex flex-row justify-center ">
+                    <div className="col-sm-6 col-sm-offset-3">
+                        <div className="devider">
+                        </div>
+                    </div>
+                </div>
+
+
                 <div className="flex flex-col w-full sm:grid md:grid-cols-3 items-top md:flex-row md:justify-around">
 
                     <div className="p-4 w-full sm:px-16 md:px-42 md:col-span-1 ">

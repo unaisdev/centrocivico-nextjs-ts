@@ -218,13 +218,13 @@ export default function Home() {
           </div>
           <div ref={cartaRef}>
             <Carta />
+            <FoodCarousel />
           </div>
           <div ref={reservarRef}>
             <Reserva />
 
           </div>
           <Redes />
-          <FoodCarousel />
           <Footer />
         </main>
         <Cookies />

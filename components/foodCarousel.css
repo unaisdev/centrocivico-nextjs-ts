@@ -2,6 +2,13 @@
   font-family: sans-serif;
 }
 
-#img1 {
-    background: url("/images/slider/slider_mobile_1.jpg");
-  }
+img {
+  pointer-events: none;
+}
+
+.react-multi-carousel-track {
+  user-select: none;
+  display: flex;
+  justify-content: 'center';
+  align-items: center;
+}
