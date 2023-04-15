@@ -13,7 +13,7 @@ const FoodCarousel = () => {
                 autoPlay={true}
                 autoPlaySpeed={3000}
                 centerMode={false}
-                className="bg-gradient-to-b from-white via-gray-200 to-white  py-8"
+                className="bg-gradient-to-b from-white via-gray-300 to-white py-8"
                 draggable
                 focusOnSelect={false}
                 infinite

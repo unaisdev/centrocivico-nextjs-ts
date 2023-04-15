@@ -1,6 +1,7 @@
 import Reserva from "@/components/Reserva";
 import { PrismaClient, reserva } from "@prisma/client";
 import axios from "axios";
+import Joi from "joi";
 import { createTransporter } from "./config/mailer";
 
 type MailOptions = {
@@ -10,6 +11,15 @@ type MailOptions = {
   html: string;
 };
 
+const reservaSchema = Joi.object({
+  nombre: Joi.string().min(3).max(50).required(),
+  dia: Joi.string().required(),
+  hora: Joi.string().required(),
+  telefono: Joi.string().allow(null),
+  email: Joi.string().email().required(),
+  mas_info: Joi.string().allow(null),
+  personas: Joi.number().required(),
+});
 
 const prisma = new PrismaClient();
 
@@ -152,21 +162,21 @@ export async function POST(request: Request) {
   const response: reserva = await new Response(request.body).json();
 
   try {
+    await reservaSchema.validateAsync(response);
+
     const newReserva = await prisma.reserva.create({
       data: response,
     });
     console.log("Adding 'reserva':" + toJson(newReserva));
-    
-    sendConfirmationEmail(newReserva);
 
+    sendConfirmationEmail(newReserva);
 
     return new Response(`${toJson(newReserva)}`);
   } catch (error: any) {
     console.log(error.message);
 
     return new Response(error.message);
-  }finally{
-    
+  } finally {
   }
 }
 
