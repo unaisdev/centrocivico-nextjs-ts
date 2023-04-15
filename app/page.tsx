@@ -13,6 +13,7 @@ import { slide as Menu } from 'react-burger-menu'
 import { Analytics } from '@vercel/analytics/react'
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import Cookies from '@/components/Cookies'
+import FoodCarousel from '@/components/FoodCarousel'
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
@@ -223,7 +224,7 @@ export default function Home() {
 
           </div>
           <Redes />
-
+          <FoodCarousel />
           <Footer />
         </main>
         <Cookies />

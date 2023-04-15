@@ -50,7 +50,7 @@ header {
   transition: transform 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1104px) {
   #logo {
     max-width: 350px;
   }

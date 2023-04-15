@@ -1,10 +1,13 @@
 .cookies {
   opacity: 1;
+  display: block;
+
 }
 
 .dismiss {
   opacity: 0;
-  transition-property: opacity;
+  display: none;
+  transition-property: display, opacity;
   transition-duration: 1s;
 }
 
