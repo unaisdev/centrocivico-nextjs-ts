@@ -12,10 +12,6 @@ type MailOptions = {
 };
 
 const reservaSchema = Joi.object({
-  id: Joi.number().required().messages({
-    "any.required": 'El campo "id" es obligatorio',
-    "number.base": 'El campo "id" debe ser un número',
-  }),
   nombre: Joi.string().min(3).max(50).required().messages({
     "any.required": 'El campo "nombre" es obligatorio',
     "string.min": 'El campo "nombre" debe tener al menos {#limit} caracteres',
@@ -199,6 +195,7 @@ export async function POST(request: Request) {
       message: detail.message.replace(/['"]/g, ""),
     }));
 
+    console.log(errors)
     return new Response(JSON.stringify({ errors }));
   } finally {
   }

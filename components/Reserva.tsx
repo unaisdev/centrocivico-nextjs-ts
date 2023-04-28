@@ -5,28 +5,7 @@ import bg from '../public/images/brick.jpg'
 import ContactForm from "./ContactForm"
 import ReservaForm from "./ReservaForm"
 
-
-interface Props {
-    reserva: Reserva
-}
-
 const Reserva = () => {
-    // const [hours, setHours] = useState(Number);
-    // const [minutes, setMinutes] = useState(Number);
-    // const [startDate, setStartDate] = useState(
-    //     setHours(setMinutes(new Date(), 30), 16)
-    // );
-
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        // procesa los datos del formulario aquí
-
-        // redirige al usuario a la página con sus datos
-
-    };
-
-
     return (
         <>
             <section

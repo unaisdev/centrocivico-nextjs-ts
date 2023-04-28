@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
 import './foodCarousel.css'
+
 
 const FoodCarousel = () => {
     return (
@@ -75,8 +77,8 @@ const FoodCarousel = () => {
 
 
                 }}
-                rewind={false}
-                rewindWithAnimation={false}
+                rewind
+                rewindWithAnimation
                 rtl={false}
                 shouldResetAutoplay
                 showDots={false}
@@ -84,129 +86,129 @@ const FoodCarousel = () => {
                 swipeable
                 removeArrowOnDeviceType={"mobile"}
             >
-                <div className='flex justify-center items-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                        <div className="relative rounded-lg ">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1554502078-ef0fc409efce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1084&q=80" />
+                    <div className='flex justify-center items-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                            <div className="relative rounded-lg ">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1554502078-ef0fc409efce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1084&q=80" />
 
-                        </div>
-                        <div className="px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1543992321-cefacfc2322e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                            </div>
+                            <div className="px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1548783701-178830d050f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1543992321-cefacfc2322e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1450&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1548783701-178830d050f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
 
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1616669944447-d65d41a222bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1454&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1616669944447-d65d41a222bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1454&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1560963805-6c64417e3413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1436&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1464093515883-ec948246accb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1543738066-49621e5b1f87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1441&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
-                        </div>
-                    </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1542528180-1c2803fa048c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1499715217757-2aa48ed7e593?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className='flex justify-center'>
-                    <div className="max-w-xs bg-white rounded-md shadow-lg ">
-                        <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
-                            <img className="rounded-t-md" src="https://images.unsplash.com/photo-1677051707499-87ea304987b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
-                        </div>
-                        <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
-                            <h3 className="text-xs text-white font-bold">
-                                Muslitos de pollo a la brasa</h3>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1560963805-6c64417e3413?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1436&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1464093515883-ec948246accb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1459&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1543738066-49621e5b1f87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1441&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1542528180-1c2803fa048c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center'>
+                        <div className="max-w-xs bg-white rounded-md shadow-lg ">
+                            <div className="relative rounded-lg w-[160px] sm:w-[200px] md:w-[250px]">
+                                <img className="rounded-t-md" src="https://images.unsplash.com/photo-1677051707499-87ea304987b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" />
+                            </div>
+                            <div className="w-[160px] sm:w-[200px] md:w-[250px] px-4 py-2 bg-gray-800 opacity-70 rounded-b-md">
+                                <h3 className="text-xs text-white font-bold">
+                                    Muslitos de pollo a la brasa</h3>
+                            </div>
+                        </div>
+                    </div>
 
             </Carousel>
         </>

@@ -118,7 +118,8 @@ function ReservaForm() {
         <>
           <div className="w-5/8 p-8 my-4 md:px-12 lg:w-9/12 lg:pl-20 lg:pr-40 bg-white mr-auto rounded-2xl shadow-md border">
             <div className="flex">
-              <h1 className="font-bold uppercase text-5xl">Reserva con <br /> nosotros</h1>
+              <h1 className="font-bold uppercase text-xl md:text-5xl">Reserva con nosotros</h1>
+              <h1 className="font-bold uppercase text-xl md:text-5xl">Reserva con nosotros</h1>
             </div>
             <div className="grid grid-cols-1 gap-5 md:grid-cols-5 mt-5">
               <input className="w-full md:col-span-2 bg-gray-100 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -159,19 +160,17 @@ function ReservaForm() {
               <div className="grid grid-cols-2 gap-10">
                 <div className=' col-span-1'>
                   <p className="text-neutral-900">
-                    Higer Bidea, 6,
+                    P.º de la Fuente,
                   </p>
                   <p className="text-neutral-900">
-                    20280 Hondarribia
+                    31262 Allo, Navarra
                   </p>
                   <p className="text-neutral-900">
-                    Tel: 943 64 27 12
+                    Tel: 628 18 20 22
                   </p>
                   <p className="text-neutral-900">
-                    arrokaberri@arrokaberri.es
-                  </p>
-                  <p className="text-neutral-900">
-                    <strong> 943612043 </strong>
+                    centrocivicoallo5@gmail.com
+
                   </p>
                 </div>
                 {/* <a href="#" className="col-span-1 p-4 flex justify-center items-center uppercase text-sm text-center font-bold tracking-wide  bg-yellow-600 text-gray-100 rounded-lg w-full 
@@ -179,7 +178,7 @@ function ReservaForm() {
                   CONTACTAR
                 </a> */}
               </div>
-              
+
 
 
 

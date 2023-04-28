@@ -22,6 +22,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(true);
 
 
   const handleMenuToggle = () => {
@@ -31,7 +32,6 @@ export default function Home() {
   const handleInfoToggle = () => {
     setInfoOpen(!infoOpen);
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +62,7 @@ export default function Home() {
     console.log("scrolling carta" + offsetTop);
 
     window.scrollTo({
-      top: offsetTop - 150,
+      top: offsetTop - 80,
       behavior: 'smooth',
     });
 
@@ -74,7 +74,7 @@ export default function Home() {
     console.log("scrolling reserva" + offsetTop);
 
     window.scrollTo({
-      top: offsetTop - 150,
+      top: offsetTop - 60,
       behavior: 'smooth',
     });
 
@@ -86,7 +86,7 @@ export default function Home() {
     const offsetTop = inicioRef?.current?.offsetTop ?? 0
 
     window.scrollTo({
-      top: offsetTop - 150,
+      top: offsetTop - 80,
       behavior: 'smooth',
     });
 
@@ -117,8 +117,10 @@ export default function Home() {
         {/* 
           * 
           */}
-          
+
         <Menu
+          right
+
           isOpen={menuOpen}
           onClose={handleMenuToggle}
           burgerButtonClassName='hidden'
@@ -126,8 +128,9 @@ export default function Home() {
           className="!w-full flex justify-center items-center !bg-black/75"
           menuClassName='flex !h-auto flex-row justify-center'
           itemListClassName='flex flex-col justify-center'
-          crossButtonClassName='!h-8 !w-8 bg-red-600 rounded'
+          crossButtonClassName='!absolute !top-3 !left-3 !h-8 !w-8 bg-red-600 rounded'
           customCrossIcon={<CloseIcon />}
+          
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}>
           <button className="text-4xl uppercase text-white text-center my-6" onClick={() => { handleScrollToCarta(); handleMenuToggle(); }}>
@@ -225,7 +228,7 @@ export default function Home() {
             <FoodCarousel />
           </div>
           <div ref={reservarRef}>
-            <Reserva />
+            <Reserva  />
 
           </div>
           <Redes />

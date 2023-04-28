@@ -15,6 +15,10 @@ img {
     -ms-user-select: none;
 }
 
+.react-multi-carousel-list {
+
+}
+
 .react-multi-carousel-track {
   user-select: none;
   display: flex;
