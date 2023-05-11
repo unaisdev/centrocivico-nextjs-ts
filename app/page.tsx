@@ -6,7 +6,6 @@ import Carta from '@/components/Carta'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import Redes from '@/components/Redes'
-import Reserva from '@/components/Reserva'
 import ContactForm from '@/components/ContactForm'
 import { useEffect, useRef, useState } from 'react'
 import { slide as Menu } from 'react-burger-menu'
@@ -14,6 +13,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import Cookies from '@/components/Cookies'
 import FoodCarousel from '@/components/FoodCarousel'
+import ReservaContainer from '@/components/Reserva'
 
 export default function Home() {
   const inicioRef = useRef<HTMLDivElement | null>(null);
@@ -228,7 +228,7 @@ export default function Home() {
             <FoodCarousel />
           </div>
           <div ref={reservarRef}>
-            <Reserva  />
+            <ReservaContainer  />
 
           </div>
           <Redes />

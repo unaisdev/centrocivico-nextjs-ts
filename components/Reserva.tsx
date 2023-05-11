@@ -5,7 +5,7 @@ import bg from '../public/images/brick.jpg'
 import ContactForm from "./ContactForm"
 import ReservaForm from "./ReservaForm"
 
-const Reserva = () => {
+const ReservaContainer = () => {
     return (
         <>
             <section
@@ -27,4 +27,4 @@ const Reserva = () => {
     );
 }
 
-export default Reserva;
+export default ReservaContainer;

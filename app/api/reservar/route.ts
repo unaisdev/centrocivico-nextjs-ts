@@ -32,7 +32,7 @@ const reservaSchema = Joi.object({
     "string.email":
       'El campo "email" debe ser una dirección de correo electrónico válida',
   }),
-  mas_info: Joi.string().allow(null),
+  mas_info: Joi.string().allow(null).empty(),
   personas: Joi.number().required().messages({
     "any.required": 'El campo "personas" es obligatorio',
     "number.base": 'El campo "personas" debe ser un número',
