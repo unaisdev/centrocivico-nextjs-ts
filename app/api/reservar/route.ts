@@ -153,7 +153,6 @@ export async function GET(request: Request) {
           },
         });
 
-        prisma.$disconnect();
       } else {
         reservas = await prisma.reserva.findMany();
         console.log(reservas);
@@ -169,7 +168,7 @@ export async function GET(request: Request) {
     return new Response("method not implemented");
   }
 }
-
+// 
 export async function POST(request: Request) {
   console.log("------------------POST-----------------");
 
