@@ -1,0 +1,34 @@
+* {
+  font-family: sans-serif;
+}
+
+img {
+  
+}
+
+#page-wrap > div > div > ul > li > div > div > div > img {
+  user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.react-multi-carousel-list {
+
+}
+
+.react-multi-carousel-track {
+  user-select: none;
+  display: flex;
+  justify-content: 'center';
+  align-items: center;
+}
+
+
+@media (max-width: 450px) {
+  #page-wrap >  > div > ul > li > div > div > div > img {
+    width: 250px;
+  }
+}

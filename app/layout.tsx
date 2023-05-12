@@ -1,5 +1,6 @@
 import './globals.css'
 
+
 export const metadata = {
   title: 'Bar Restaurante Centro Cívico de Allo',
   description: 'Bar Restaurante Centro Cívico de Allo',

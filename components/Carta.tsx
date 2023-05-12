@@ -1,6 +1,7 @@
 
 import { useRef } from 'react';
 import './carta.css'
+import FoodCarousel from './FoodCarousel';
 
 const Carta = () => {
 
@@ -207,6 +208,7 @@ const Carta = () => {
                         </div>
                     </div>
                 </div>
+
 
                 <div className="flex flex-col w-full sm:grid md:grid-cols-3 items-top md:flex-row md:justify-around">
 
@@ -573,12 +575,6 @@ const Carta = () => {
 
                 </div>
 
-                <div className="row d-flex justify-content-center">
-                    <div className="col-sm-6 col-sm-offset-3">
-                        <div className="devider">
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
