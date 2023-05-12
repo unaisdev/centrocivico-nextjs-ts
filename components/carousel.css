@@ -136,12 +136,12 @@
   .item-1 {
     z-index: 2;
     opacity: 1;
-    background: url("/images/slider/slider_mobile_1.jpg");
+    background: url("/images/slider/slider_mobile_2.jpg");
     background-size: cover;
     background-position: center;
   }
   .item-2 {
-    background: url("/images/slider/slider_mobile_2.jpg");
+    background: url("/images/slider/slider_mobile_1.jpg");
     background-size: cover;
     background-position: center;
   }
